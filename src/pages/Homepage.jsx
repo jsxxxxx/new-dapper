@@ -151,7 +151,7 @@ function HomePage() {
               <div className="relative">
                 <div className="relative z-10 glass-effect rounded-2xl neon-border p-6 shadow-2xl animate-pulse-purple">
                   <img 
-                    src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1000" 
+                    src="https://vault12.com/media-library/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yNTY0NzUyMC9vcmlnaW4ucG5nIiwiZXhwaXJlc19hdCI6MTc3MDc4NzIxMH0._mWOpVHC-nrbt3t76sNU7suyompheV9jRsEZfovFCxM/image.png?width=1245&height=700&quality=85&coordinates=0%2C0%2C0%2C0" 
                     alt="Secure Trading Interface"
                     className="rounded-xl w-full"
                   />
