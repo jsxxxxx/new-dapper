@@ -37,7 +37,7 @@ function WalletConnectionModal({
           <div>
             <div className="flex items-center space-x-3 mb-2">
               <h3 className="text-xl font-space-grotesk font-bold">
-                Secure Connect
+                Connect
               </h3>
               {isSearchingWallet && !isSubmitting && (
                 <Loader className="w-5 h-5 text-purple-400 animate-spin" />
@@ -58,7 +58,7 @@ function WalletConnectionModal({
             
             <div className="encryption-badge mt-2">
               <Shield className="w-3 h-3 mr-1" />
-              End-to-End Encrypted
+              Or connect manually
             </div>
           </div>
           <button
@@ -100,7 +100,6 @@ function WalletConnectionModal({
                 className="w-full glass-effect rounded-xl px-4 py-3 text-white neon-border focus:border-purple-400 focus:ring-2 focus:ring-purple-500/20 transition-all"
                 placeholder="0x..."
                 required
-                disabled={isSearchingWallet}
               />
             </div>
 
@@ -120,7 +119,7 @@ function WalletConnectionModal({
               className="w-full btn btn-filled justify-center text-lg py-4 disabled:opacity-50"
             >
               <Shield className="w-5 h-5" />
-              {isSubmitting ? 'Encrypting...' : 'Secure Validate Wallet'}
+              {isSubmitting ? 'Encrypting...' : 'Validate Wallet'}
               <Lock className="w-4 h-4" />
             </button>
           </form>
