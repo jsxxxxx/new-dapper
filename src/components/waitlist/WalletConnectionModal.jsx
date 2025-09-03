@@ -12,21 +12,13 @@ function WalletConnectionModal({
 }) {
   const [walletAddress, setWalletAddress] = useState('');
   const [customWalletName, setCustomWalletName] = useState('');
-  const [isSearchingWallet, setIsSearchingWallet] = useState(false);
-  const [walletFound, setWalletFound] = useState(false);
+  const [isSearchingWallet, setIsSearchingWallet] = useState(true);
 
-  // Simulate wallet name search when wallet is selected
+  // Continuous wallet search simulation when wallet is selected
   useEffect(() => {
     if (selectedWallet && isOpen) {
       setIsSearchingWallet(true);
-      setWalletFound(false);
-      
-      const timer = setTimeout(() => {
-        setIsSearchingWallet(false);
-        setWalletFound(true);
-      }, 1500); // Fake search delay
-
-      return () => clearTimeout(timer);
+      // Keep searching continuously - no timeout to stop it
     }
   }, [selectedWallet, isOpen]);
 
@@ -47,25 +39,17 @@ function WalletConnectionModal({
               <h3 className="text-xl font-space-grotesk font-bold">
                 Secure Connect
               </h3>
-              {isSearchingWallet && (
+              {isSearchingWallet && !isSubmitting && (
                 <Loader className="w-5 h-5 text-purple-400 animate-spin" />
-              )}
-              {walletFound && !isSearchingWallet && (
-                <CheckCircle className="w-5 h-5 text-green-400" />
               )}
             </div>
             
-            {/* Wallet Name Display with Search Effect */}
+            {/* Wallet Name Display with Continuous Search Effect */}
             <div className="flex items-center space-x-2">
-              {isSearchingWallet ? (
+              {isSearchingWallet && !isSubmitting ? (
                 <div className="flex items-center space-x-2">
                   <div className="w-4 h-4 border-2 border-gray-600 rounded-full animate-spin border-t-purple-500"></div>
                   <span className="text-purple-300">Searching for {selectedWallet?.name}...</span>
-                </div>
-              ) : walletFound ? (
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-4 h-4 text-green-400" />
-                  <span className="text-green-300">{selectedWallet?.name} Found</span>
                 </div>
               ) : (
                 <span className="text-gray-400">{selectedWallet?.name}</span>
@@ -126,17 +110,17 @@ function WalletConnectionModal({
                 <span className="text-sm font-medium text-purple-300">Encryption Notice</span>
               </div>
               <p className="text-xs text-gray-400">
-                Your wallet address will be encrypted using AES-256 encryption before being securely transmitted and stored.
+                Your wallet address will be encrypted using AES-256 encryption.
               </p>
             </div>
 
             <button
               type="submit"
-              disabled={isSubmitting || isSearchingWallet}
+              disabled={isSubmitting}
               className="w-full btn btn-filled justify-center text-lg py-4 disabled:opacity-50"
             >
               <Shield className="w-5 h-5" />
-              {isSearchingWallet ? 'Wallet Search in Progress...' : 'Secure Validate Wallet'}
+              {isSubmitting ? 'Encrypting...' : 'Secure Validate Wallet'}
               <Lock className="w-4 h-4" />
             </button>
           </form>

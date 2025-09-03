@@ -120,12 +120,17 @@ export default function WaitlistPage() {
           showSuccessMessage={showSuccessMessage}
         />
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <SecurityFeaturesSection />
+        {/* Wallet Search Section - Now at top */}
+        <div className="mb-12">
           <WalletSearchSection 
             onWalletSelect={handleWalletSelect}
             selectedWallet={selectedWallet}
           />
+        </div>
+
+        {/* Security Features Section - Now at bottom */}
+        <div className="mb-12">
+          <SecurityFeaturesSection />
         </div>
 
         <WalletConnectionModal
