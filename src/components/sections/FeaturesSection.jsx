@@ -62,7 +62,7 @@ function FeaturesSection() {
     },
     {
       icon: BookCheck,
-      title: 'Secure Validation',
+      title: 'Validation',
       description: 'End-to-end encrypted transaction verification with blockchain-level security.',
       color: 'purple'
     },
@@ -116,7 +116,7 @@ function FeaturesSection() {
     },
     {
       icon: Check,
-      title: 'Secure Validation',
+      title: 'Validation',
       description: 'Fast transaction validation with encrypted verification and blockchain security.',
       color: 'pink'
     }
