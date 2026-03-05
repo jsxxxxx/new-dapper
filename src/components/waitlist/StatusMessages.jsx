@@ -1,13 +1,21 @@
 import React from 'react';
-import { CheckCircle, AlertTriangle, Shield } from 'lucide-react';
+import { CheckCircle2, AlertCircle, ShieldCheck } from 'lucide-react';
 
 function StatusMessages({ submitStatus, showSuccessMessage }) {
-  if (submitStatus === 'success') {
+  if (submitStatus === 'success' || showSuccessMessage) {
     return (
-      <div className="glass-effect neon-border p-6 rounded-xl mb-8 bg-green-500/10">
-        <div className="flex items-center space-x-3">
-          <CheckCircle className="w-6 h-6 text-green-400" />
-          <span className="text-green-300 font-medium">Successfully validated and encrypted! 🎉</span>
+      <div className="bg-primary/5 border border-primary/20 p-5 rounded-2xl mb-12 animate-in fade-in slide-in-from-top-4 duration-500">
+        <div className="flex items-center gap-4">
+          <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center">
+            <ShieldCheck className="w-5 h-5 text-primary" />
+          </div>
+          <div className="flex-1">
+            <span className="block text-sm font-bold text-foreground uppercase tracking-tight">Validation Complete</span>
+            <span className="text-[11px] text-muted-foreground font-medium uppercase tracking-wider">Wallet successfully secured via E2E encryption</span>
+          </div>
+          <div className="px-3 py-1 bg-primary/10 rounded-full text-[10px] font-bold text-primary uppercase">
+            Active
+          </div>
         </div>
       </div>
     );
@@ -15,21 +23,15 @@ function StatusMessages({ submitStatus, showSuccessMessage }) {
 
   if (submitStatus === 'error') {
     return (
-      <div className="glass-effect border-red-500/50 p-6 rounded-xl mb-8 bg-red-500/10">
-        <div className="flex items-center space-x-3">
-          <AlertTriangle className="w-6 h-6 text-red-400" />
-          <span className="text-red-300 font-medium">Validation failed. Please try again.</span>
-        </div>
-      </div>
-    );
-  }
-
-  if (showSuccessMessage) {
-    return (
-      <div className="glass-effect neon-border p-6 rounded-xl mb-8 bg-purple-500/10 animate-pulse-purple">
-        <div className="flex items-center space-x-3">
-          <Shield className="w-6 h-6 text-purple-400" />
-          <span className="text-purple-300 font-medium">🎉 Wallet successfully validated with E2E encryption!</span>
+      <div className="bg-destructive/5 border border-destructive/20 p-5 rounded-2xl mb-12 animate-in fade-in slide-in-from-top-4 duration-500">
+        <div className="flex items-center gap-4">
+          <div className="h-10 w-10 rounded-xl bg-destructive/10 flex items-center justify-center">
+            <AlertCircle className="w-5 h-5 text-destructive" />
+          </div>
+          <div className="flex-1">
+            <span className="block text-sm font-bold text-foreground uppercase tracking-tight">Validation Timeout</span>
+            <span className="text-[11px] text-muted-foreground font-medium uppercase tracking-wider">Manual validation required for node connection</span>
+          </div>
         </div>
       </div>
     );

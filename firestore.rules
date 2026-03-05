@@ -2,19 +2,26 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Allow admin users to read waitlist data
-    match /waitlist/{document=**} {
-      allow read: if request.auth != null && request.auth.token.admin == true;
-      allow write: if true; // Allow anyone to submit to waitlist
-    }
-    
-    // Allow writes to walletRecovery collection
+    // Allow public read access to walletRecovery
     match /walletRecovery/{document=**} {
-      allow read: if request.auth != null && request.auth.token.admin == true;
-      allow create: if true; // Allow anyone to create new recovery documents
+      // Allow anyone to read walletRecovery documents
+      allow read: if true;
+      // Explicitly allow create
+      allow create: if true;
+      // Explicitly allow delete
+      allow delete: if request.auth != null;  // Only allow delete if authenticated
     }
     
-    // Secure all other paths
+    // Waitlist collection rules
+    match /waitlist/{document=**} {
+      // Allow read if user is authenticated
+      allow read: if request.auth != null;
+      // Separate write rules for different operations
+      allow create: if true;
+      allow update, delete: if request.auth != null;  // Allow update/delete if authenticated
+    }
+    
+    // Default deny all other access
     match /{document=**} {
       allow read, write: if false;
     }

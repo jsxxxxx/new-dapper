@@ -4,105 +4,126 @@ export const wallets = [
     name: 'MetaMask', 
     description: 'The most popular Ethereum wallet',
     category: 'Browser Extension',
-    supported: ['Ethereum', 'BSC', 'Polygon']
-  },
-  { 
-    id: 'walletconnect', 
-    name: 'WalletConnect', 
-    description: 'Connect to any dApp with QR code',
-    category: 'Protocol',
-    supported: ['Multi-chain']
-  },
-  { 
-    id: 'coinbase', 
-    name: 'Coinbase Wallet', 
-    description: 'Self-custody wallet by Coinbase',
-    category: 'Mobile/Desktop',
-    supported: ['Ethereum', 'Bitcoin', 'Litecoin']
-  },
-  { 
-    id: 'trust', 
-    name: 'Trust Wallet', 
-    description: 'Multi-cryptocurrency wallet',
-    category: 'Mobile',
-    supported: ['60+ Blockchains']
-  },
-  { 
-    id: 'ledger', 
-    name: 'Ledger', 
-    description: 'Hardware wallet for maximum security',
-    category: 'Hardware',
-    supported: ['1800+ Coins']
+    supported: ['Ethereum', 'BSC', 'Polygon'],
+    brandColor: '#F6851B',
+    logo: 'https://cdn.jsdelivr.net/gh/rainbow-me/rainbowkit@main/packages/rainbowkit/src/wallets/walletConnectors/metaMaskWallet/metaMaskWallet.svg'
   },
   { 
     id: 'phantom', 
     name: 'Phantom', 
     description: 'Solana ecosystem wallet',
     category: 'Browser Extension',
-    supported: ['Solana', 'Ethereum']
+    supported: ['Solana', 'Ethereum'],
+    brandColor: '#AB9FF2',
+    logo: 'https://cdn.jsdelivr.net/gh/rainbow-me/rainbowkit@main/packages/rainbowkit/src/wallets/walletConnectors/phantomWallet/phantomWallet.svg'
   },
   { 
-    id: 'exodus', 
-    name: 'Exodus', 
-    description: 'Beautiful desktop and mobile wallet',
-    category: 'Desktop/Mobile',
-    supported: ['260+ Assets']
+    id: 'coinbase', 
+    name: 'Coinbase Wallet', 
+    description: 'Self-custody wallet by Coinbase',
+    category: 'Mobile/Desktop',
+    supported: ['Ethereum', 'Bitcoin', 'Litecoin'],
+    brandColor: '#0052FF',
+    logo: 'https://cdn.jsdelivr.net/gh/rainbow-me/rainbowkit@main/packages/rainbowkit/src/wallets/walletConnectors/coinbaseWallet/coinbaseWallet.svg'
   },
   { 
-    id: 'atomic', 
-    name: 'Atomic Wallet', 
-    description: 'Decentralized wallet with built-in exchange',
-    category: 'Desktop/Mobile',
-    supported: ['500+ Coins']
-  },
-  { 
-    id: 'rainbow', 
-    name: 'Rainbow', 
-    description: 'Ethereum wallet built for DeFi',
+    id: 'trust', 
+    name: 'Trust Wallet', 
+    description: 'Multi-cryptocurrency wallet',
     category: 'Mobile',
-    supported: ['Ethereum', 'Polygon']
+    supported: ['60+ Blockchains'],
+    brandColor: '#3375BB',
+    logo: 'https://cdn.jsdelivr.net/gh/rainbow-me/rainbowkit@main/packages/rainbowkit/src/wallets/walletConnectors/trustWallet/trustWallet.svg'
   },
   { 
-    id: 'argent', 
-    name: 'Argent', 
-    description: 'Smart contract wallet with social recovery',
-    category: 'Mobile',
-    supported: ['Ethereum', 'StarkNet']
+    id: 'binance', 
+    name: 'Binance Wallet', 
+    description: 'Official Binance ecosystem wallet',
+    category: 'Browser Extension',
+    supported: ['BSC', 'Ethereum'],
+    brandColor: '#F3BA2F',
+    logo: 'https://cdn.jsdelivr.net/gh/trustwallet/assets@master/blockchains/binance/info/logo.png'
   },
   { 
-    id: 'safepal', 
-    name: 'SafePal', 
-    description: 'Hardware and software wallet solution',
-    category: 'Hardware/Software',
-    supported: ['100+ Blockchains']
+    id: 'okx', 
+    name: 'OKX Wallet', 
+    description: 'Multichain wallet by OKX',
+    category: 'Mobile/Extension',
+    supported: ['Ethereum', 'Bitcoin', 'OKC'],
+    brandColor: '#000000',
+    logo: 'https://cdn.jsdelivr.net/gh/rainbow-me/rainbowkit@main/packages/rainbowkit/src/wallets/walletConnectors/okxWallet/okxWallet.svg'
+  },
+  { 
+    id: 'solflare', 
+    name: 'Solflare', 
+    description: 'A powerful Solana wallet',
+    category: 'Extension/Mobile',
+    supported: ['Solana'],
+    brandColor: '#FF6F00',
+    logo: 'https://cdn.jsdelivr.net/gh/trustwallet/assets@master/blockchains/solana/info/logo.png'
+  },
+  { 
+    id: 'ledger', 
+    name: 'Ledger', 
+    description: 'Hardware wallet for maximum security',
+    category: 'Hardware',
+    supported: ['1800+ Coins'],
+    brandColor: '#000000',
+    logo: 'https://cdn.jsdelivr.net/gh/rainbow-me/rainbowkit@main/packages/rainbowkit/src/wallets/walletConnectors/ledgerWallet/ledgerWallet.svg'
   },
   { 
     id: 'trezor', 
     name: 'Trezor', 
     description: 'Original hardware wallet',
     category: 'Hardware',
-    supported: ['1600+ Coins']
+    supported: ['1600+ Coins'],
+    brandColor: '#000000',
+    logo: 'https://cdn.jsdelivr.net/gh/trustwallet/assets@master/blockchains/bitcoin/info/logo.png'
   },
   { 
-    id: 'keplr', 
-    name: 'Keplr', 
-    description: 'Cosmos ecosystem wallet',
-    category: 'Browser Extension',
-    supported: ['Cosmos', 'IBC Chains']
+    id: 'bitget', 
+    name: 'Bitget Wallet', 
+    description: 'Ultimate Web3 trading wallet',
+    category: 'Mobile/Extension',
+    supported: ['Multi-chain'],
+    brandColor: '#00F0FF',
+    logo: 'https://cdn.jsdelivr.net/gh/rainbow-me/rainbowkit@main/packages/rainbowkit/src/wallets/walletConnectors/bitgetWallet/bitgetWallet.svg'
   },
   { 
-    id: 'terra', 
-    name: 'Terra Station', 
-    description: 'Official Terra ecosystem wallet',
+    id: 'petra', 
+    name: 'Petra', 
+    description: 'Aptos ecosystem wallet',
     category: 'Browser Extension',
-    supported: ['Terra', 'Cosmos']
+    supported: ['Aptos'],
+    brandColor: '#34D399',
+    logo: 'https://cdn.jsdelivr.net/gh/trustwallet/assets@master/blockchains/aptos/info/logo.png'
+  },
+  { 
+    id: 'martian', 
+    name: 'Martian', 
+    description: 'Aptos and Sui wallet',
+    category: 'Browser Extension',
+    supported: ['Aptos', 'Sui'],
+    brandColor: '#000000',
+    logo: 'https://martianwallet.xyz/favicon.ico'
+  },
+  { 
+    id: 'sui', 
+    name: 'Sui Wallet', 
+    description: 'Official Sui network wallet',
+    category: 'Browser Extension',
+    supported: ['Sui'],
+    brandColor: '#6FB9FF',
+    logo: 'https://cdn.jsdelivr.net/gh/trustwallet/assets@master/blockchains/sui/info/logo.png'
   },
   { 
     id: 'other', 
     name: 'Other Wallet', 
     description: 'Connect any other wallet',
     category: 'Custom',
-    supported: ['Various']
+    supported: ['Various'],
+    brandColor: '#333333',
+    logo: null
   }
 ];
 

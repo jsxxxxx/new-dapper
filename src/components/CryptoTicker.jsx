@@ -143,7 +143,7 @@ function CryptoTicker() {
 
   return (
     <div
-      className="glass-effect py-4 border-y border-purple-500/20"
+      className="bg-white py-4 border-y border-black"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -151,10 +151,10 @@ function CryptoTicker() {
         <div className={`flex space-x-12 ${!isPaused ? 'animate-scroll' : ''}`}>
           {cryptoData.map((crypto, index) => (
             <div key={index} className="flex items-center space-x-3 text-sm whitespace-nowrap group">
-              <crypto.icon className="w-5 h-5 text-purple-400 group-hover:text-purple-300 transition-colors" />
-              <span className="font-space-grotesk font-medium text-purple-300">{crypto.symbol}</span>
-              <span className="text-gray-200">${crypto.price}</span>
-              <span className={`font-medium ${crypto.change.startsWith('-') ? 'text-red-400' : 'text-green-400'}`}>
+              <crypto.icon className="w-5 h-5 text-black group-hover:opacity-60 transition-colors" />
+              <span className="font-space-grotesk font-bold text-black uppercase tracking-widest">{crypto.symbol}</span>
+              <span className="text-black opacity-60 font-medium">${crypto.price}</span>
+              <span className={`font-bold ${crypto.change.startsWith('-') ? 'text-black italic' : 'text-black'}`}>
                 {crypto.change}
               </span>
             </div>

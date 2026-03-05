@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Wallet2, Lock, Shield } from 'lucide-react';
+import { Search, Wallet2, Lock, Shield, ChevronRight } from 'lucide-react';
 import { searchWallets } from '../../data/wallets';
+import { Input } from '../ui/input';
+import { Card, CardContent } from '../ui/card';
+import { Badge } from '../ui/badge';
 
 function WalletSearchSection({ onWalletSelect, selectedWallet }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -14,7 +17,7 @@ function WalletSearchSection({ onWalletSelect, selectedWallet }) {
         const results = searchWallets(searchQuery);
         setFilteredWallets(results);
         setIsSearching(false);
-      }, 500); // Fake search delay
+      }, 300);
 
       return () => clearTimeout(timer);
     } else {
@@ -29,84 +32,71 @@ function WalletSearchSection({ onWalletSelect, selectedWallet }) {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center space-x-3 mb-6">
-        <Wallet2 className="w-8 h-8 text-purple-400" />
-        <h2 className="text-2xl font-space-grotesk font-bold">Connect Your Wallet</h2>
-      </div>
-
-      {/* Search Bar */}
-      <div className="relative">
-        <input
+      <div className="relative group">
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground group-focus-within:text-primary transition-colors" />
+        <Input
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Search wallets by name, category, or supported chains..."
-          className="w-full glass-effect rounded-xl pl-12 pr-4 py-4 text-white neon-border focus:border-purple-400 focus:ring-2 focus:ring-purple-500/20 transition-all"
+          placeholder="Search for your wallet..."
+          className="pl-10 h-12 bg-secondary/30 border-none rounded-xl focus-visible:ring-1 focus-visible:ring-primary/20"
         />
-        <Search className="w-5 h-5 absolute left-4 top-1/2 transform -translate-y-1/2 text-purple-400" />
-        
         {isSearching && (
-          <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
-            <div className="w-5 h-5 border-2 border-gray-600 rounded-full animate-spin border-t-purple-500"></div>
+          <div className="absolute right-3 top-1/2 -translate-y-1/2">
+            <div className="w-4 h-4 border-2 border-primary/20 rounded-full animate-spin border-t-primary"></div>
           </div>
         )}
       </div>
 
-      {/* Search Results Count */}
-      {searchQuery && (
-        <div className="text-sm text-gray-400">
-          {isSearching ? 'Searching...' : `Found ${filteredWallets.length} wallet${filteredWallets.length !== 1 ? 's' : ''}`}
-        </div>
-      )}
-
-      {/* Wallet Grid */}
-      <div className="grid gap-4 max-h-96 overflow-y-auto">
-        {isSearching ? (
-          <div className="flex items-center justify-center py-12">
-            <div className="text-center">
-              <div className="w-12 h-12 border-4 border-gray-600 rounded-full animate-spin border-t-purple-500 mb-4 mx-auto"></div>
-              <p className="text-purple-300">Searching secure wallets...</p>
-            </div>
-          </div>
-        ) : filteredWallets.length === 0 ? (
-          <div className="text-center py-12">
-            <Wallet2 className="w-12 h-12 text-gray-500 mx-auto mb-4" />
-            <p className="text-gray-400">No wallets found matching your search</p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[500px] overflow-y-auto pr-2 scrollbar-thin">
+        {filteredWallets.length === 0 ? (
+          <div className="col-span-full text-center py-12 bg-secondary/10 rounded-2xl border border-dashed border-border">
+            <Wallet2 className="w-10 h-10 text-muted-foreground mx-auto mb-3 opacity-20" />
+            <p className="text-sm text-muted-foreground font-medium">No wallets found matching your search</p>
           </div>
         ) : (
           filteredWallets.map((wallet) => (
             <button
               key={wallet.id}
-              className={`flex items-center justify-between p-4 glass-effect rounded-xl transition-all group text-left ${
-                selectedWallet?.id === wallet.id 
-                  ? 'neon-border bg-purple-500/10 border-purple-400' 
-                  : 'neon-border hover:bg-purple-500/5'
-              }`}
               onClick={() => onWalletSelect(wallet)}
+              className={`flex items-center gap-4 p-4 rounded-2xl border text-left transition-all duration-200 group relative overflow-hidden ${
+                selectedWallet?.id === wallet.id 
+                  ? 'border-primary ring-1 ring-primary/20 bg-primary/5' 
+                  : 'bg-background hover:bg-secondary/50 border-border hover:border-primary/30'
+              }`}
             >
-              <div className="flex-1">
-                <div className="flex items-center space-x-3 mb-2">
-                  <span className="font-medium group-hover:text-purple-300 text-lg">
-                    {wallet.name}
-                  </span>
-                  <span className="text-xs px-2 py-1 rounded-full bg-purple-500/20 text-purple-300">
-                    {wallet.category}
-                  </span>
-                </div>
-                <p className="text-sm text-gray-400 mb-2">{wallet.description}</p>
-                <div className="flex items-center space-x-2">
-                  <span className="text-xs text-gray-500">Supports:</span>
-                  <span className="text-xs text-purple-300">{wallet.supported.join(', ')}</span>
-                </div>
+              <div className="h-12 w-12 rounded-xl bg-secondary/50 flex items-center justify-center p-2.5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                {wallet.logo ? (
+                  <img src={wallet.logo} alt={wallet.name} className="h-full w-full object-contain" />
+                ) : (
+                  <Wallet2 className="h-6 w-6 text-muted-foreground" />
+                )}
               </div>
               
-              <div className="flex items-center space-x-2 ml-4">
-                <div className="encryption-badge">
-                  <Lock className="w-3 h-3 mr-1" />
-                  E2E
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between mb-0.5">
+                  <span className="font-bold text-foreground text-sm truncate uppercase tracking-tight">
+                    {wallet.name}
+                  </span>
+                  {selectedWallet?.id === wallet.id && (
+                    <div className="h-2 w-2 rounded-full bg-primary animate-pulse" />
+                  )}
                 </div>
-                <Wallet2 className="w-5 h-5 text-purple-400" />
+                <div className="flex items-center gap-2">
+                  <span className="text-[10px] text-muted-foreground font-medium uppercase truncate">
+                    {wallet.category}
+                  </span>
+                  <span className="text-[10px] text-primary/40 font-bold">•</span>
+                  <span className="text-[10px] text-primary font-bold uppercase tracking-widest flex items-center">
+                    <Lock className="w-2.5 h-2.5 mr-1" />
+                    E2E
+                  </span>
+                </div>
               </div>
+
+              <ChevronRight className={`h-4 w-4 text-muted-foreground transition-transform duration-200 ${
+                selectedWallet?.id === wallet.id ? 'translate-x-0 opacity-100' : '-translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100'
+              }`} />
             </button>
           ))
         )}

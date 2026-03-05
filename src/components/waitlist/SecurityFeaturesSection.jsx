@@ -1,63 +1,50 @@
 import React from 'react';
 import { Shield, Lock, Key, Eye, Fingerprint } from 'lucide-react';
+import { Card, CardContent } from '../ui/card';
 
 function SecurityFeaturesSection() {
   const securityFeatures = [
     {
       icon: Lock,
-      title: 'AES-256 Encryption',
-      description: 'Military-grade encryption for all data transmission'
+      title: 'Encryption',
+      description: 'AES-256 standards'
     },
     {
       icon: Eye,
-      title: 'Zero-Knowledge Proof',
-      description: 'Validate without revealing sensitive information'
+      title: 'ZK-Proof',
+      description: 'Zero disclosure'
     },
     {
       icon: Key,
-      title: 'Multi-Signature Security',
-      description: 'Multiple validation layers for enhanced protection'
-    },
-    {
-      icon: Fingerprint,
-      title: 'Biometric Authentication',
-      description: 'Advanced biometric security protocols'
-    },
-    {
-      icon: Shield,
-      title: 'Secure Key Management',
-      description: 'Enterprise-grade key storage and management'
+      title: 'Multi-Sig',
+      description: 'Layered security'
     }
   ];
 
   return (
-    <div className="glass-effect p-8 rounded-2xl neon-border">
-      <div className="flex items-center space-x-3 mb-6">
-        <Shield className="w-8 h-8 text-purple-400" />
-        <h2 className="text-2xl font-space-grotesk font-bold">Security Features</h2>
-      </div>
-      
-      <div className="space-y-4">
+    <div className="pt-8 border-t border-border">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {securityFeatures.map((feature, index) => (
-          <div key={index} className="flex items-start space-x-3 p-3 rounded-lg hover:bg-purple-500/5 transition-colors">
-            <div className="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-              <feature.icon className="w-4 h-4 text-purple-400" />
+          <div key={index} className="flex flex-col items-center md:items-start text-center md:text-left space-y-2">
+            <div className="h-10 w-10 rounded-full bg-secondary flex items-center justify-center">
+              <feature.icon className="h-5 w-5 text-primary/70" />
             </div>
             <div>
-              <h3 className="font-medium text-white mb-1">{feature.title}</h3>
-              <p className="text-sm text-gray-400">{feature.description}</p>
+              <h3 className="font-bold text-sm tracking-tight uppercase text-foreground">
+                {feature.title}
+              </h3>
+              <p className="text-xs text-muted-foreground font-medium">
+                {feature.description}
+              </p>
             </div>
           </div>
         ))}
       </div>
       
-      <div className="mt-6 p-4 glass-effect rounded-lg neon-border bg-purple-500/5">
-        <div className="flex items-center space-x-2 mb-2">
-          <Shield className="w-4 h-4 text-purple-400" />
-          <span className="text-sm font-medium text-purple-300">Security Guarantee</span>
-        </div>
-        <p className="text-xs text-gray-400">
-          All wallet connections are protected by end-to-end encryption with zero-knowledge validation.
+      <div className="mt-12 p-4 bg-secondary/30 rounded-2xl flex items-center justify-center gap-3 border border-border/50">
+        <Shield className="w-5 h-5 text-primary opacity-50" />
+        <p className="text-[11px] text-muted-foreground font-bold uppercase tracking-widest text-center">
+          Institutional grade security protocols active
         </p>
       </div>
     </div>

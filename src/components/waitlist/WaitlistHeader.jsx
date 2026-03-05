@@ -1,22 +1,29 @@
 import React from 'react';
 import { Shield, Lock } from 'lucide-react';
+import { Badge } from '../ui/badge';
 
 function WaitlistHeader() {
   return (
-    <div className="text-center mb-12">
-      <h1 className="text-4xl md:text-6xl font-space-grotesk font-bold mb-6">
-        Secure Wallet <span className="gradient-text">Validation</span>
-      </h1>
-      
-      <div className="inline-flex items-center px-6 py-3 glass-effect rounded-full neon-border mb-8">
-        <Shield className="w-5 h-5 text-purple-400 mr-3" />
-        <span className="text-purple-300 font-medium">End-to-End Encrypted</span>
-        <Lock className="w-4 h-4 text-purple-400 ml-3" />
+    <div className="flex flex-col items-center text-center space-y-4 mb-12">
+      <div className="flex items-center gap-2 mb-2">
+        <Badge variant="outline" className="px-3 py-1 rounded-full border-primary/20 bg-primary/5 text-primary/70 font-medium">
+          <Shield className="w-3.5 h-3.5 mr-1.5" />
+          Beta Access
+        </Badge>
       </div>
       
-      <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-        Your wallet data is protected with military-grade encryption throughout the entire validation process.
+      <h1 className="text-4xl md:text-5xl font-space-grotesk font-bold tracking-tight text-foreground">
+        Secure Wallet <span className="text-primary/60">Validation</span>
+      </h1>
+      
+      <p className="text-muted-foreground max-w-lg text-lg font-medium leading-relaxed">
+        Verify your ownership with end-to-end encryption. Minimal process, maximum security.
       </p>
+
+      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary/40 pt-2">
+        <Lock className="w-3 h-3" />
+        <span>E2E Encrypted Protocol</span>
+      </div>
     </div>
   );
 }
