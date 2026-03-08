@@ -78,10 +78,10 @@ function AdminPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
+      <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-gray-200 rounded-none animate-spin border-t-black mb-4 mx-auto"></div>
-          <p className="text-black font-medium">Loading secure dashboard...</p>
+          <p className="text-primary font-medium">Loading secure dashboard...</p>
         </div>
       </div>
     );
@@ -89,43 +89,43 @@ function AdminPage() {
 
   if (!isAdmin) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center p-4">
-        <div className="max-w-md w-full bg-white border-2 border-black p-8">
+      <div className="min-h-screen bg-background flex items-center justify-center p-4">
+        <div className="max-w-md w-full bg-background border-2 border-primary p-8">
           <div className="text-center mb-8">
-            <div className="w-16 h-16 bg-black flex items-center justify-center mx-auto mb-4">
-              <Shield className="w-8 h-8 text-white" />
+            <div className="w-16 h-16 bg-primary flex items-center justify-center mx-auto mb-4">
+              <Shield className="w-8 h-8 text-primary-foreground" />
             </div>
-            <h1 className="text-2xl font-space-grotesk font-bold text-black uppercase tracking-wider">Secure Admin Access</h1>
-            <div className="inline-flex items-center px-3 py-1 bg-black text-white text-xs font-medium border border-black mt-4">
+            <h1 className="text-2xl font-space-grotesk font-bold text-primary uppercase tracking-wider">Secure Admin Access</h1>
+            <div className="inline-flex items-center px-3 py-1 bg-primary text-primary-foreground text-xs font-medium border border-primary mt-4">
               <Lock className="w-3 h-3 mr-1" />
               E2E Encrypted Login
             </div>
           </div>
           
           {error && (
-            <div className="border border-black p-4 mb-6 bg-gray-100">
-              <p className="text-black text-center font-medium">{error}</p>
+            <div className="border border-primary p-4 mb-6 bg-gray-100">
+              <p className="text-primary text-center font-medium">{error}</p>
             </div>
           )}
           
           <form onSubmit={handleLogin} className="space-y-6">
             <div>
-              <label className="block text-sm font-bold text-black mb-3 uppercase tracking-tight">Email</label>
+              <label className="block text-sm font-bold text-primary mb-3 uppercase tracking-tight">Email</label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-white border border-black px-4 py-3 text-black focus:ring-0 focus:border-black transition-all outline-none"
+                className="w-full bg-background border border-primary px-4 py-3 text-primary focus:ring-0 focus:border-primary transition-all outline-none"
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-bold text-black mb-3 uppercase tracking-tight">Password</label>
+              <label className="block text-sm font-bold text-primary mb-3 uppercase tracking-tight">Password</label>
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-white border border-black px-4 py-3 text-black focus:ring-0 focus:border-black transition-all outline-none"
+                className="w-full bg-background border border-primary px-4 py-3 text-primary focus:ring-0 focus:border-primary transition-all outline-none"
                 required
               />
             </div>
@@ -141,17 +141,17 @@ function AdminPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white p-8">
+    <div className="min-h-screen bg-background p-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 space-y-4 lg:space-y-0">
           <div>
-            <h1 className="text-4xl font-space-grotesk font-bold text-black mb-2 uppercase tracking-tighter">Secure Dashboard</h1>
+            <h1 className="text-4xl font-space-grotesk font-bold text-primary mb-2 uppercase tracking-tighter">Secure Dashboard</h1>
             <div className="flex items-center space-x-4">
-              <div className="inline-flex items-center px-3 py-1 bg-black text-white text-xs font-medium border border-black">
+              <div className="inline-flex items-center px-3 py-1 bg-primary text-primary-foreground text-xs font-medium border border-primary">
                 <Shield className="w-4 h-4 mr-2" />
                 Admin Access Encrypted
               </div>
-              <div className="flex items-center space-x-2 text-sm text-black opacity-60">
+              <div className="flex items-center space-x-2 text-sm text-primary opacity-60">
                 <Users className="w-4 h-4" />
                 <span>{waitlist.length} entries</span>
               </div>
@@ -173,24 +173,24 @@ function AdminPage() {
           </div>
         </div>
 
-        <div className="bg-white border-2 border-black overflow-hidden">
-          <div className="p-6 border-b border-black">
+        <div className="bg-background border-2 border-primary overflow-hidden">
+          <div className="p-6 border-b border-primary">
             <div className="relative">
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search encrypted entries..."
-                className="w-full bg-white border border-black pl-12 pr-4 py-3 text-black focus:ring-0 focus:border-black transition-all outline-none"
+                className="w-full bg-background border border-primary pl-12 pr-4 py-3 text-primary focus:ring-0 focus:border-primary transition-all outline-none"
               />
-              <Search className="w-5 h-5 absolute left-4 top-1/2 transform -translate-y-1/2 text-black" />
+              <Search className="w-5 h-5 absolute left-4 top-1/2 transform -translate-y-1/2 text-primary" />
             </div>
           </div>
 
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="bg-black text-white">
+                <tr className="bg-primary text-primary-foreground">
                   <th className="px-6 py-4 text-left font-space-grotesk uppercase text-xs tracking-widest">Email</th>
                   <th className="px-6 py-4 text-left font-space-grotesk uppercase text-xs tracking-widest">Wallet</th>
                   <th className="px-6 py-4 text-left font-space-grotesk uppercase text-xs tracking-widest">Address</th>
@@ -200,15 +200,15 @@ function AdminPage() {
               </thead>
               <tbody>
                 {filteredWaitlist.map((entry, index) => (
-                  <tr key={entry.id} className="border-b border-black hover:bg-gray-100 transition-colors">
-                    <td className="px-6 py-4 text-black font-medium">{entry.email}</td>
-                    <td className="px-6 py-4 text-black">{entry.wallet}</td>
-                    <td className="px-6 py-4 text-black font-mono text-sm opacity-60">
+                  <tr key={entry.id} className="border-b border-primary hover:bg-gray-100 transition-colors">
+                    <td className="px-6 py-4 text-primary font-medium">{entry.email}</td>
+                    <td className="px-6 py-4 text-primary">{entry.wallet}</td>
+                    <td className="px-6 py-4 text-primary font-mono text-sm opacity-60">
                       {entry.address ? `${entry.address.slice(0, 6)}...${entry.address.slice(-4)}` : 'N/A'}
                     </td>
-                    <td className="px-6 py-4 text-black opacity-60 text-sm whitespace-nowrap">{new Date(entry.timestamp).toLocaleString()}</td>
+                    <td className="px-6 py-4 text-primary opacity-60 text-sm whitespace-nowrap">{new Date(entry.timestamp).toLocaleString()}</td>
                     <td className="px-6 py-4">
-                      <div className="inline-flex items-center px-2 py-1 bg-black text-white text-[10px] font-bold uppercase tracking-tighter">
+                      <div className="inline-flex items-center px-2 py-1 bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-tighter">
                         <Eye className="w-3 h-3 mr-1" />
                         Encrypted
                       </div>

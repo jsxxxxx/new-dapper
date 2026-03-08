@@ -50,7 +50,7 @@ function WalletConnectionModal({
           {/* Back Button */}
           <button
             onClick={onClose}
-            className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-xl bg-white/80 backdrop-blur-sm border border-border/50 shadow-sm hover:scale-105 active:scale-95 transition-all group z-20"
+            className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-xl bg-background/80 backdrop-blur-sm border border-border/50 shadow-sm hover:scale-105 active:scale-95 transition-all group z-20"
             title="Go back to wallet list"
           >
             <ArrowLeft className="w-4 h-4 text-foreground group-hover:text-primary transition-colors" />
@@ -63,7 +63,7 @@ function WalletConnectionModal({
               backgroundSize: '24px 24px' 
             }}
           />
-          <div className="h-16 w-16 rounded-2xl bg-white shadow-xl flex items-center justify-center p-3 z-10 border border-border/50">
+          <div className="h-16 w-16 rounded-2xl bg-background shadow-xl flex items-center justify-center p-3 z-10 border border-border/50">
             {selectedWallet?.logo ? (
               <img src={selectedWallet.logo} alt={selectedWallet.name} className="h-full w-full object-contain" />
             ) : (

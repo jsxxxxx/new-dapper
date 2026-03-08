@@ -14,111 +14,111 @@ function FeaturesSection() {
   const features = [
     {
       icon: Shield,
-      title: 'Bank-Grade Security',
-      description: 'Multi-signature wallets with AES-256 encryption protect your assets with military-grade security.'
+      title: 'Ironclad Defense',
+      description: 'Distributed threshold signatures coupled with AES-256 ciphering to make asset breaches mathematically improbable.'
     },
     {
       icon: Zap,
-      title: 'Secure Staking',
-      description: 'Maximize earnings with encrypted staking pools. Your assets grow efficiently with zero-knowledge validation.'
+      title: 'Yield Maximization',
+      description: 'Supercharge your compounding mechanisms via encrypted, zero-knowledge validation staking protocols.'
     },
     {
       icon: BarChart3,
-      title: 'Fix Transactions',
-      description: 'Instant resolution of transaction errors with end-to-end encrypted communication channels.'
+      title: 'Rapid Rectification',
+      description: 'Instant structural diagnostics and anomaly resolution through decentralized communication layers.'
     },
     {
       icon: Lock,
-      title: 'Login Protection',
-      description: 'Advanced authentication with biometric verification and encrypted session management.'
+      title: 'Identity Shielding',
+      description: 'Next-gen auth flows integrating biometric checkpoints and session encapsulation techniques.'
     },
     {
       icon: ArrowDownUp,
-      title: 'Secure Migration',
-      description: 'Migrate to latest protocols with encrypted data transfer and zero downtime.'
+      title: 'Seamless Uplifts',
+      description: 'Transition assets across mainnet iterations with zero downtime and dark-routed data.'
     },
     {
       icon: Wallet2,
-      title: 'Asset Recovery',
-      description: 'Expert-assisted recovery with encrypted communication and secure key management.'
+      title: 'Vault Retrieval',
+      description: 'Assisted fund extraction methodologies relying on offline, multi-party key generation.'
     },
     {
       icon: Zap,
-      title: 'Wallet Rectification',
-      description: 'Lightning-fast wallet fixes with encrypted validation and secure processing.'
+      title: 'Wallet Synchronization',
+      description: 'Sub-second digital twin state reconciliation with robust, stealth ledger checks.'
     },
     {
       icon: Crosshair,
-      title: 'Claim Resolution',
-      description: 'Effortless claims with encrypted verification and automated secure processing.'
+      title: 'Protocol Claiming',
+      description: 'Frictionless smart-contract allocations securely routed directly to your local enclave.'
     },
     {
       icon: BookCheck,
-      title: 'Validation',
-      description: 'End-to-end encrypted transaction verification with blockchain-level security.'
+      title: 'State Verification',
+      description: 'Immutable transaction validation anchored to primary layer-1 blockchain records.'
     },
     {
       icon: Users,
-      title: 'Synchronization',
-      description: 'Real-time encrypted sync across all devices with zero-knowledge architecture.'
+      title: 'Device Sync',
+      description: 'Instantaneous multi-platform state syncing powered by peer-to-peer encrypted mesh networks.'
     },
     {
       icon: ArrowDownNarrowWide,
-      title: 'Slippage Protection',
-      description: 'Minimized slippage with encrypted order routing and secure price optimization.'
+      title: 'Slippage Defense',
+      description: 'Proprietary MEV-resistant routing algorithms to optimize trade execution sizing.'
     },
     {
       icon: CircleDotDashed,
-      title: 'Compliance Shield',
-      description: 'Full regulatory compliance with encrypted audit trails and secure reporting.'
+      title: 'Regulatory Alignment',
+      description: 'Built-in privacy-preserving audit tools designed for seamless compliance exports.'
     },
     {
       icon: Gift,
-      title: 'Airdrop Security',
-      description: 'Secure airdrop management with encrypted distribution and fraud protection.'
+      title: 'Airdrop Interception',
+      description: 'Automated, risk-free collection of network distributions using isolated proxy contracts.'
     },
     {
       icon: Coins,
-      title: 'Gas Optimization',
-      description: 'Intelligent gas fee optimization with encrypted transaction batching.'
+      title: 'Gas Abstraction',
+      description: 'Algorithmically batched settlement processes that drastically cut down computational overhead.'
     },
     {
       icon: CircleOff,
-      title: 'Secure Bridging',
-      description: 'Cross-chain bridging with end-to-end encryption and multi-layer validation.'
+      title: 'Cross-Domain Bridges',
+      description: 'Trustless asset teleportation across diverse ecosystems with cryptographic finality.'
     },
     {
       icon: Boxes,
-      title: 'Glitch Protection',
-      description: 'Robust wallet technology with encrypted error handling and automatic recovery.'
+      title: 'Latency Protection',
+      description: 'Automatic failover mechanisms and resilient fallbacks preventing critical transaction drops.'
     },
     {
       icon: ArrowLeftRight,
-      title: 'Encrypted Swapping',
-      description: 'Instant token swaps with encrypted routing and secure liquidity pools.'
+      title: 'Darkpool Swaps',
+      description: 'Instantaneous liquidity routing utilizing fragmented, obfuscated order paths.'
     },
     {
       icon: Check,
-      title: 'Validation',
-      description: 'Fast transaction validation with encrypted verification and blockchain security.'
+      title: 'Consensus Check',
+      description: 'High-speed node validation ensuring every packet meets rigorous decentralized standards.'
     }
   ];
 
   return (
     <section 
       ref={ref}
-      className={`py-24 bg-white transition-all duration-1000 ${
+      className={`py-24 bg-background transition-all duration-1000 ${
         inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
       id="features"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-space-grotesk font-bold mb-6 text-black">
-            Why Choose <span className="underline">DappServer</span>
+          <h2 className="text-4xl font-space-grotesk font-bold mb-6 text-primary">
+            The <span className="underline">DappServer</span> Advantage
           </h2>
-          <p className="text-xl text-black opacity-60 max-w-3xl mx-auto">
-            Every feature is built with security-first architecture and end-to-end encryption
+          <p className="text-xl text-primary opacity-60 max-w-3xl mx-auto">
+            A comprehensive suite of fortified tools designed to keep your portfolio entirely in your control.
           </p>
         </div>
         
@@ -126,23 +126,25 @@ function FeaturesSection() {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="group p-6 bg-white border border-black hover:bg-black hover:text-white transition-all duration-300 cursor-pointer"
+              className="group relative p-8 bg-background border-2 border-primary hover:-translate-y-2 hover:-translate-x-1 hover:shadow-[8px_8px_0_0_theme(colors.primary.DEFAULT)] transition-all duration-300 cursor-pointer overflow-hidden"
               onClick={() => navigate('/waitlist')}
             >
-              <div className="w-12 h-12 border border-black flex items-center justify-center mb-6 transition-all group-hover:border-white">
-                <feature.icon className="w-6 h-6 text-black group-hover:text-white" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-primary/20 transition-all duration-500"></div>
+              
+              <div className="w-14 h-14 bg-background border-2 border-primary shadow-[4px_4px_0_0_theme(colors.primary.DEFAULT)] flex items-center justify-center mb-8 relative z-10 transition-transform duration-300 group-hover:scale-110">
+                <feature.icon className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="text-xl font-space-grotesk font-bold mb-3 transition-colors">
+              <h3 className="text-xl font-space-grotesk font-bold mb-3 text-primary relative z-10">
                 {feature.title}
               </h3>
-              <p className="opacity-60 group-hover:opacity-100 transition-colors leading-relaxed">
+              <p className="opacity-70 group-hover:opacity-100 text-primary transition-colors leading-relaxed relative z-10">
                 {feature.description}
               </p>
-              <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="inline-flex items-center px-3 py-1 text-xs font-medium bg-white text-black border border-black">
-                  <Lock className="w-3 h-3 mr-1" />
-                  E2E Encrypted
-                </div>
+              <div className="mt-6 flex items-center space-x-2 relative z-10">
+                <div className="w-8 h-px bg-primary transform group-hover:scale-x-150 transition-transform origin-left"></div>
+                <span className="text-xs font-bold text-primary tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity translate-x-4 group-hover:translate-x-0 duration-300">
+                  Explore
+                </span>
               </div>
             </div>
           ))}

@@ -14,64 +14,63 @@ function HowItWorksSection() {
   const steps = [
     {
       icon: Wallet2,
-      title: 'Connect Wallet',
-      description: 'Link your wallet with end-to-end encryption and zero-knowledge validation.',
-      features: ['AES-256 Encryption', 'Zero-Knowledge Proof', 'Secure Handshake']
+      title: 'Initialize Connection',
+      description: 'Synchronize your digital wallet via our hardened, stealth-mode gateway.',
+      features: ['Quantum-resistant mapping', 'Silent Auth', 'Data Obfuscation']
     },
     {
       icon: ShieldCheck,
-      title: 'Verify Securely',
-      description: 'Complete encrypted verification with multi-layer security protocols.',
-      features: ['Biometric Auth', 'Multi-Signature', 'Encrypted Storage']
+      title: 'Identity Assertion',
+      description: 'Lock in your session through decentralized, on-chain credential checks.',
+      features: ['Hardware Keys', 'Threshold Sigs', 'Vault Isolation']
     },
     {
       icon: Rocket,
-      title: 'Trade Safely',
-      description: 'Begin trading with military-grade security and encrypted transactions.',
-      features: ['Encrypted Orders', 'Secure Matching', 'Protected Funds']
+      title: 'Execute with Protocol',
+      description: 'Deploy assets and interact seamlessly within our heavily fortified sandbox.',
+      features: ['Stealth Routing', 'Liquidity Cloaking', 'Fail-safe Reverts']
     }
   ];
 
   return (
     <section 
       ref={ref}
-      className={`py-24 bg-white transition-all duration-1000 ${
+      className={`py-24 bg-background transition-all duration-1000 ${
         inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
       id="how-it-works"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-space-grotesk font-bold mb-6 text-black">
-            How It <span className="underline">Works</span>
+          <h2 className="text-4xl font-space-grotesk font-bold mb-6 text-primary">
+            The <span className="underline">DappServer</span> Flow
           </h2>
-          <p className="text-xl text-black opacity-60 max-w-2xl mx-auto">
-            Three simple steps to access the most secure trading platform
+          <p className="text-xl text-primary opacity-60 max-w-2xl mx-auto">
+            Three core phases to activate our decentralized shielding network
           </p>
         </div>
 
         <div className="relative">
           {/* Connection Lines */}
-          <div className="absolute top-1/2 left-[16.66%] right-[16.66%] h-px bg-black hidden lg:block"></div>
+          <div className="absolute top-1/2 left-[16.66%] right-[16.66%] h-px bg-primary hidden lg:block"></div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {steps.map((step, index) => (
-              <button 
+              <div 
                 key={index}
-                className="relative group text-left"
-                onClick={() => navigate('/waitlist')}
+                className="relative group flex flex-col items-center"
               >
-                <div className="p-8 bg-white border border-black hover:bg-black hover:text-white transition-all duration-300 h-full">
+                <div className="p-10 bg-background border-2 border-primary shadow-[4px_4px_0_0_theme(colors.primary.DEFAULT)] hover:shadow-[12px_12px_0_0_theme(colors.primary.DEFAULT)] hover:-translate-y-2 hover:-translate-x-2 transition-all duration-300 h-full w-full max-w-sm cursor-pointer" onClick={() => navigate('/waitlist')}>
                   {/* Step Number */}
-                  <div className="absolute -top-4 left-8 w-8 h-8 bg-black flex items-center justify-center text-white font-bold text-sm border border-black group-hover:bg-white group-hover:text-black">
+                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-primary flex items-center justify-center text-primary-foreground font-bold text-xl border-2 border-background shadow-[0_4px_10px_rgba(74,222,128,0.5)] z-10">
                     {index + 1}
                   </div>
                   
-                  <div className="w-16 h-16 border border-black flex items-center justify-center mb-6 mx-auto group-hover:border-white transition-transform">
-                    <step.icon className="w-8 h-8 text-black group-hover:text-white" />
+                  <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-8 mx-auto group-hover:bg-primary/20 transition-colors">
+                    <step.icon className="w-10 h-10 text-primary drop-shadow-[0_0_8px_rgba(74,222,128,0.8)]" />
                   </div>
                   
-                  <h3 className="text-xl font-space-grotesk font-bold mb-4 text-center transition-colors">
+                  <h3 className="text-2xl font-space-grotesk font-bold mb-4 text-center text-primary">
                     {step.title}
                   </h3>
                   
@@ -88,14 +87,14 @@ function HowItWorksSection() {
                     ))}
                   </div>
                   
-                  <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity flex justify-center">
-                    <div className="inline-flex items-center px-3 py-1 text-xs font-medium bg-white text-black border border-black">
-                      <Lock className="w-3 h-3 mr-1" />
-                      E2E Encrypted
+                  <div className="mt-8 pt-6 border-t border-primary/20 flex justify-center w-full relative z-10 transition-transform duration-300 group-hover:scale-105">
+                    <div className="inline-flex items-center px-4 py-2 font-medium bg-primary text-primary-foreground border-2 border-primary hover:bg-background hover:text-primary transition-colors">
+                      <Lock className="w-4 h-4 mr-2" />
+                      Authenticate
                     </div>
                   </div>
                 </div>
-              </button>
+              </div>
             ))}
           </div>
         </div>
