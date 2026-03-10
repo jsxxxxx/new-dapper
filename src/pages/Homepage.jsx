@@ -139,17 +139,79 @@ function HomePage() {
                 </div>
               </div>
 
-              <div className="relative mt-8 lg:mt-0">
+                <div className="relative mt-8 lg:mt-0">
                 <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full mix-blend-screen"></div>
                 
-                <div className="relative z-10 bg-background border-2 border-primary shadow-[8px_8px_0_0_theme(colors.primary.DEFAULT)] p-2 transition-transform duration-500 hover:-translate-y-2 hover:-translate-x-2 hover:shadow-[16px_16px_0_0_theme(colors.primary.DEFAULT)]">
+                <div className="relative z-10 bg-background border-2 border-primary shadow-[8px_8px_0_0_theme(colors.primary.DEFAULT)] transition-transform duration-500 hover:-translate-y-2 hover:-translate-x-2 hover:shadow-[16px_16px_0_0_theme(colors.primary.DEFAULT)]">
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50"></div>
-                  <img 
-                    src="/tenor.gif" 
-                    alt="Secure Trading Interface"
-                    className="w-full border border-primary relative z-10 grayscale hover:grayscale-0 transition-all duration-1000"
-                  />
-                  
+
+                  {/* Animated Dashboard Panel */}
+                  <div className="hero-dashboard p-5 font-mono text-xs select-none">
+                    {/* Top bar */}
+                    <div className="flex items-center justify-between border-b border-primary/30 pb-3 mb-4">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                        <span className="text-primary tracking-widest uppercase text-[10px] font-bold">DappServer // LIVE</span>
+                      </div>
+                      <span className="text-primary/50 text-[10px]">NODE_ID: 0x7f3A…c9B2</span>
+                    </div>
+
+                    {/* Sparkline chart */}
+                    <div className="mb-4 border border-primary/20 p-3 bg-primary/5">
+                      <div className="flex items-end justify-between h-14 gap-[3px]">
+                        {[30,45,35,60,50,75,55,80,65,90,72,88,70,95,80,100].map((h, i) => (
+                          <div
+                            key={i}
+                            className="flex-1 bg-primary transition-all duration-700"
+                            style={{
+                              height: `${h}%`,
+                              opacity: 0.3 + (i / 16) * 0.7,
+                              animation: `pulse ${1 + (i % 4) * 0.3}s ease-in-out infinite alternate`
+                            }}
+                          />
+                        ))}
+                      </div>
+                      <div className="flex justify-between mt-2 text-primary/40 text-[9px]">
+                        <span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>NOW</span>
+                      </div>
+                    </div>
+
+                    {/* Token rows */}
+                    <div className="space-y-2 mb-4">
+                      {[
+                        { sym: 'BTC', price: '67,241.80', chg: '+2.34%', up: true },
+                        { sym: 'ETH', price: '3,512.44',  chg: '+1.87%', up: true },
+                        { sym: 'SOL', price: '148.92',    chg: '-0.61%', up: false },
+                        { sym: 'ARB', price: '1.204',     chg: '+4.10%', up: true },
+                      ].map(({ sym, price, chg, up }) => (
+                        <div key={sym} className="flex items-center justify-between border border-primary/20 px-3 py-2 hover:border-primary/60 transition-colors group">
+                          <div className="flex items-center space-x-2">
+                            <div className="w-5 h-5 border border-primary/40 flex items-center justify-center text-primary text-[8px] font-bold group-hover:bg-primary/10 transition-colors">{sym[0]}</div>
+                            <span className="text-primary font-bold">{sym}</span>
+                          </div>
+                          <span className="text-primary/80">${price}</span>
+                          <span className={up ? 'text-primary font-bold' : 'text-red-400 font-bold'}>{chg}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Console log strip */}
+                    <div className="border border-primary/20 bg-black/30 p-3 space-y-1">
+                      <div className="text-primary/40 text-[9px] mb-1 tracking-wider">// PROTOCOL LOG</div>
+                      {[
+                        '> TX_CONFIRMED :: 0xab12…e4f9',
+                        '> VAULT_LOCKED :: session#8821',
+                        '> NODE_SYNC  :: 12/12 peers',
+                        '> CIPHER_OK  :: AES-256-GCM',
+                      ].map((line, i) => (
+                        <div key={i} className="text-primary/60 text-[9px] flex items-center space-x-2">
+                          <span className="text-primary">›</span>
+                          <span className="hero-console-line" style={{ animationDelay: `${i * 0.4}s` }}>{line}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
                   {/* Floating Security Badge */}
                   <div className="absolute -top-6 -right-6 lg:-right-12 bg-background border-2 border-primary p-4 shadow-[4px_4px_0_0_theme(colors.primary.DEFAULT)] z-20 animate-pulse">
                     <div className="flex items-center space-x-3">

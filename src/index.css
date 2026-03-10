@@ -121,6 +121,26 @@
   animation: scroll 20s linear infinite;
 }
 
+@keyframes consoleFadeIn {
+  0% { opacity: 0; transform: translateX(-6px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.hero-console-line {
+  animation: consoleFadeIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes barPulse {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.85); }
+}
+
+.hero-dashboard .bar-pulse {
+  animation: barPulse 1.8s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
