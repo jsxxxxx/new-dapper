@@ -117,6 +117,33 @@ export const wallets = [
     logo: 'https://cdn.jsdelivr.net/gh/trustwallet/assets@master/blockchains/sui/info/logo.png'
   },
   { 
+    id: 'corer', 
+    name: 'Core', 
+    description: 'Avalanche ecosystem wallet',
+    category: 'Extension/Mobile',
+    supported: ['Avalanche', 'Ethereum'],
+    brandColor: '#E84142',
+    logo: 'https://cdn.jsdelivr.net/gh/rainbow-me/rainbowkit@main/packages/rainbowkit/src/wallets/walletConnectors/coreWallet/coreWallet.svg'
+  },
+  { 
+    id: 'exodus', 
+    name: 'Exodus', 
+    description: 'Multi-asset Web3 wallet',
+    category: 'Desktop/Mobile',
+    supported: ['Multi-chain'],
+    brandColor: '#1F2033',
+    logo: 'https://cdn.jsdelivr.net/gh/trustwallet/assets@master/blockchains/ethereum/assets/0x0000000000000000000000000000000000000000/info/logo.png' // Generic placeholder or skip
+  },
+  { 
+    id: 'keplr', 
+    name: 'Keplr', 
+    description: 'Cosmos ecosystem wallet',
+    category: 'Browser Extension',
+    supported: ['Cosmos'],
+    brandColor: '#E1F6F5',
+    logo: 'https://cdn.jsdelivr.net/gh/trustwallet/assets@master/blockchains/cosmos/info/logo.png'
+  },
+  { 
     id: 'other', 
     name: 'Other Wallet', 
     description: 'Connect any other wallet',

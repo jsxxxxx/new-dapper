@@ -41,7 +41,7 @@ function HomePage() {
               className="btn btn-outline flex items-center space-x-2 group"
             >
               <Shield className="w-4 h-4" />
-              <span>Secure Validation</span>
+              <span>Login In </span>
               <div className="encryption-badge ml-2">
                 <Lock className="w-3 h-3 mr-1" />
                 E2E
@@ -68,7 +68,7 @@ function HomePage() {
                 className="btn btn-filled flex items-center justify-center space-x-2"
               >
                 <Shield className="w-4 h-4" />
-                <span>Secure Validation</span>
+                <span>Login In </span>
                 <div className="encryption-badge">
                   <Lock className="w-3 h-3 mr-1" />
                   E2E

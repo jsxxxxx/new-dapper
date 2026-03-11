@@ -145,7 +145,7 @@ function WalletConnectionModal({
                 style={{ backgroundColor: brandColor }}
               >
                 <Shield className="w-5 h-5 mr-2" />
-                Validate Wallet
+                Login in
               </Button>
             </form>
           )}
