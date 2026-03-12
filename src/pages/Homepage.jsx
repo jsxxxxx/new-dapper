@@ -96,21 +96,21 @@ function HomePage() {
                   <span className="text-sm text-primary">The Ultimate Dapp Companion</span>
                 </div>
                 
-                <h1 className="text-5xl lg:text-7xl font-space-grotesk font-bold leading-tight text-primary">
-                  Master Your <span className="">Web3 Journey</span>
+                <h1 className="text-5xl lg:text-7xl font-space-grotesk font-bold leading-tight text-primary animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                  Master Your <span className="animate-text-glow">Web3 Journey</span>
                 </h1>
                 
-                <p className="text-xl text-primary max-w-xl leading-relaxed">
+                <p className="text-xl text-primary max-w-xl leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                   Navigate the decentralized ecosystem with unparalleled confidence. Our protocol ensures lightning-quick execution shielded by impenetrable cryptographic layers, tailored for maximum user peace of mind.
                 </p>
                 
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
                   <button 
                     onClick={() => navigate('/waitlist')}
                     className="btn btn-filled text-lg group relative"
                   >
                     <Shield className="w-5 h-5" />
-                    <span>Authenticate via Wallet</span>
+                    <span>Login via Wallet</span>
                     <div className="encryption-badge ml-2">
                       <Lock className="w-3 h-3 mr-1" />
                       E2E Encrypted

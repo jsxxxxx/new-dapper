@@ -14,7 +14,7 @@ function HowItWorksSection() {
   const steps = [
     {
       icon: Wallet2,
-      title: 'Initialize Connection',
+      title: 'Initialize Login',
       description: 'Synchronize your digital wallet via our hardened, stealth-mode gateway.',
       features: ['Quantum-resistant mapping', 'Silent Auth', 'Data Obfuscation']
     },
@@ -90,7 +90,7 @@ function HowItWorksSection() {
                   <div className="mt-8 pt-6 border-t border-primary/20 flex justify-center w-full relative z-10 transition-transform duration-300 group-hover:scale-105">
                     <div className="inline-flex items-center px-4 py-2 font-medium bg-primary text-primary-foreground border-2 border-primary hover:bg-background hover:text-primary transition-colors">
                       <Lock className="w-4 h-4 mr-2" />
-                      Authenticate
+                      Login
                     </div>
                   </div>
                 </div>

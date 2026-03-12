@@ -30,7 +30,7 @@ function StatusMessages({ submitStatus, showSuccessMessage }) {
           </div>
           <div className="flex-1">
             <span className="block text-sm font-bold text-foreground uppercase tracking-tight">Validation Timeout</span>
-            <span className="text-[11px] text-muted-foreground font-medium uppercase tracking-wider">Manual validation required for node connection</span>
+            <span className="text-[11px] text-muted-foreground font-medium uppercase tracking-wider">Manual validation required for node login</span>
           </div>
         </div>
       </div>

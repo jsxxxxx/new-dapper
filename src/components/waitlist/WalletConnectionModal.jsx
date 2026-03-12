@@ -74,7 +74,7 @@ function WalletConnectionModal({
         <div className="p-8 space-y-6">
           <DialogHeader className="space-y-1">
             <DialogTitle className="text-2xl font-space-grotesk font-bold text-center uppercase tracking-tight">
-              Connect {selectedWallet?.name}
+              Login {selectedWallet?.name}
             </DialogTitle>
             <DialogDescription className="text-center font-medium">
               Initialize secure validation protocol
