@@ -14,93 +14,103 @@ function FeaturesSection() {
   const features = [
     {
       icon: Shield,
-      title: 'Ironclad Defense',
-      description: 'Distributed threshold signatures coupled with AES-256 ciphering to make asset breaches mathematically improbable.'
-    },
-    {
-      icon: Zap,
-      title: 'Yield Maximization',
-      description: 'Supercharge your compounding mechanisms via encrypted, zero-knowledge validation staking protocols.'
-    },
-    {
-      icon: BarChart3,
-      title: 'Rapid Rectification',
-      description: 'Instant structural diagnostics and anomaly resolution through decentralized communication layers.'
-    },
-    {
-      icon: Lock,
-      title: 'Identity Shielding',
-      description: 'Next-gen auth flows integrating biometric checkpoints and session encapsulation techniques.'
-    },
-    {
-      icon: ArrowDownUp,
-      title: 'Seamless Uplifts',
-      description: 'Transition assets across mainnet iterations with zero downtime and dark-routed data.'
-    },
-    {
-      icon: Wallet2,
-      title: 'Vault Retrieval',
-      description: 'Assisted fund extraction methodologies relying on offline, multi-party key generation.'
-    },
-    {
-      icon: Zap,
-      title: 'Wallet Synchronization',
-      description: 'Sub-second digital twin state reconciliation with robust, stealth ledger checks.'
-    },
-    {
-      icon: Crosshair,
-      title: 'Protocol Claiming',
-      description: 'Frictionless smart-contract allocations securely routed directly to your local enclave.'
-    },
-    {
-      icon: BookCheck,
-      title: 'State Verification',
-      description: 'Immutable transaction validation anchored to primary layer-1 blockchain records.'
-    },
-    {
-      icon: Users,
-      title: 'Device Sync',
-      description: 'Instantaneous multi-platform state syncing powered by peer-to-peer encrypted mesh networks.'
-    },
-    {
-      icon: ArrowDownNarrowWide,
-      title: 'Slippage Defense',
-      description: 'Proprietary MEV-resistant routing algorithms to optimize trade execution sizing.'
-    },
-    {
-      icon: CircleDotDashed,
-      title: 'Regulatory Alignment',
-      description: 'Built-in privacy-preserving audit tools designed for seamless compliance exports.'
-    },
-    {
-      icon: Gift,
-      title: 'Airdrop Interception',
-      description: 'Automated, risk-free collection of network distributions using isolated proxy contracts.'
+      title: 'Bank-Grade Security',
+      description: 'Multi-signature wallets and advanced encryption protect your assets.'
     },
     {
       icon: Coins,
-      title: 'Gas Abstraction',
-      description: 'Algorithmically batched settlement processes that drastically cut down computational overhead.'
+      title: 'Staking',
+      description: 'Maximize your earnings with secure and reliable staking options. Our platform ensures your assets grow efficiently with minimal risk.'
     },
     {
-      icon: CircleOff,
-      title: 'Cross-Domain Bridges',
-      description: 'Trustless asset teleportation across diverse ecosystems with cryptographic finality.'
+      icon: Zap,
+      title: 'Fix Transactions',
+      description: 'Instant resolution of transaction errors for a seamless trading experience. We ensure that any issues are corrected quickly and your funds are secure.'
     },
     {
-      icon: Boxes,
-      title: 'Latency Protection',
-      description: 'Automatic failover mechanisms and resilient fallbacks preventing critical transaction drops.'
+      icon: Lock,
+      title: 'Login Issue',
+      description: 'Robust security measures to prevent and resolve login issues. Our support ensures you can access your account securely and without hassle.'
     },
     {
-      icon: ArrowLeftRight,
-      title: 'Darkpool Swaps',
-      description: 'Instantaneous liquidity routing utilizing fragmented, obfuscated order paths.'
+      icon: ArrowDownUp,
+      title: 'Migration',
+      description: 'Migrate to the latest protocols for enhanced performance, scalability, and security.'
+    },
+    {
+      icon: Wallet2,
+      title: 'Assets Recovery',
+      description: 'Expert assistance for recovering lost or inaccessible assets. Our team works tirelessly to help you regain control of your digital wealth.'
+    },
+    {
+      icon: Crosshair,
+      title: 'Wallet Retification',
+      description: 'Execute trades in milliseconds with our advanced matching engine.'
+    },
+    {
+      icon: Gift,
+      title: 'Claim Issues',
+      description: 'Effortless claims process for your rewards and airdrops. We ensure you receive what you’re entitled to, without delays.'
     },
     {
       icon: Check,
-      title: 'Consensus Check',
-      description: 'High-speed node validation ensuring every packet meets rigorous decentralized standards.'
+      title: 'Validation',
+      description: 'Secure and accurate transaction verification with cutting-edge blockchain technology. Ensuring your transactions are processed swiftly and without errors.'
+    },
+    {
+      icon: Users,
+      title: 'Synchronize',
+      description: 'Instant wallet synchronization for real-time updates. Stay in sync with the latest blockchain state without missing a beat.'
+    },
+    {
+      icon: ArrowDownNarrowWide,
+      title: 'Slippage Issue',
+      description: 'Minimized slippage with precision trading technology. Our system ensures you get the best possible price for your trades.'
+    },
+    {
+      icon: CircleDotDashed,
+      title: 'Regulatory Compliance',
+      description: 'Full compliance with global cryptocurrency regulations.'
+    },
+    {
+      icon: BookCheck,
+      title: 'Airdrops json error',
+      description: 'Full compliance with global cryptocurrency regulations.'
+    },
+    {
+      icon: BarChart3,
+      title: 'Gas Fee Issues',
+      description: 'Full compliance with global cryptocurrency regulations.'
+    },
+    {
+      icon: CircleOff,
+      title: 'Bridging',
+      description: 'Bridge your assets across blockchains to unlock greater liquidity and seamless interoperability..'
+    },
+    {
+      icon: Cross,
+      title: 'Wallet Glitch',
+      description: 'Robust wallet technology with glitch-proof performance. We ensure your wallet remains fully functional at all times.'
+    },
+    {
+      icon: ArrowLeftRight,
+      title: 'Swapping',
+      description: 'Instantly swap tokens with minimal fees and seize market opportunities effortlessly.'
+    },
+    {
+      icon: Check,
+      title: 'Validate',
+      description: 'Fast and secure transaction validation using advanced blockchain technology. We ensure your transactions are confirmed quickly and reliably.'
+    },
+    {
+      icon: Boxes,
+      title: 'Asset Recovery',
+      description: 'Quick and efficient recovery of lost assets with expert assistance. We help you regain access to your cryptocurrencies safely and swiftly.'
+    },
+    {
+      icon: Wallet2,
+      title: 'NFT Issues',
+      description: 'Smooth NFT management with full support for minting and transfers. Our platform ensures your NFT operations are handled without hiccups.'
     }
   ];
 
