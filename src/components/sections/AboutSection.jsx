@@ -18,7 +18,7 @@ function AboutSection() {
     >
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-4xl font-space-grotesk font-bold text-center mb-16 text-primary uppercase tracking-tighter">
-          About <span className="underline">DappServer</span>
+          About <span className="underline">Chainnova</span>
         </h2>
         
         <div className="grid md:grid-cols-3 gap-8">

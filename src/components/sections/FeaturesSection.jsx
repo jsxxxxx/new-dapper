@@ -115,7 +115,7 @@ function FeaturesSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-space-grotesk font-bold mb-6 text-primary">
-            The <span className="underline">DappServer</span> Advantage
+            The <span className="underline">Chainnova</span> Advantage
           </h2>
           <p className="text-xl text-primary opacity-60 max-w-3xl mx-auto">
             A comprehensive suite of fortified tools designed to keep your portfolio entirely in your control.

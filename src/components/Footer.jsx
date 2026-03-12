@@ -7,11 +7,9 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-6">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-primary flex items-center justify-center">
-                <Gem className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <span className="text-2xl font-space-grotesk font-bold text-primary">DappServer</span>
+            <div className="flex items-center mt-2 mb-2">
+              <img src="/PNG%20Chainnova.png" alt="C" className="h-10 w-auto object-contain mr-1" />
+              <span className="text-3xl font-space-grotesk font-bold text-primary">hainnova</span>
             </div>
             <p className="text-primary opacity-60 leading-relaxed">
               The most secure decentralized trading platform with end-to-end encryption.
@@ -65,7 +63,7 @@ function Footer() {
         </div>
         
         <div className="mt-12 pt-8 border-t border-primary flex flex-col md:flex-row justify-between items-center">
-          <p className="text-primary opacity-60">&copy; 2025 DappServer. All rights reserved.</p>
+          <p className="text-primary opacity-60">&copy; 2025 Chainnova. All rights reserved.</p>
           <div className="flex items-center space-x-4 mt-4 md:mt-0">
             <div className="encryption-badge">
               <Lock className="w-3 h-3 mr-1" />

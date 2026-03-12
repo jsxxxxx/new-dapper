@@ -43,7 +43,7 @@ function HowItWorksSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-space-grotesk font-bold mb-6 text-primary">
-            The <span className="underline">DappServer</span> Flow
+            The <span className="underline">Chainnova</span> Flow
           </h2>
           <p className="text-xl text-primary opacity-60 max-w-2xl mx-auto">
             Three core phases to activate our decentralized shielding network

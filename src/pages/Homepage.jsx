@@ -8,6 +8,7 @@ import FeaturesSection from '../components/sections/FeaturesSection';
 import FutureReleaseSection from '../components/sections/FutureReleaseSection';
 import HowItWorksSection from '../components/sections/HowItWorksSection';
 import CryptoHubLogo from '../assets/CryptoHub.svg';
+import { ChainnovaLogo } from '../components/ChainnovaLogo';
 
 function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,11 +29,9 @@ function HomePage() {
       {/* Header/Navbar */}
       <header className="fixed w-full bg-background z-50 py-4 px-6 border-b border-primary">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-primary flex items-center justify-center">
-              <Gem className="w-6 h-6 text-primary-foreground" />
-            </div>
-            <span className="text-2xl font-space-grotesk font-bold text-primary">DappServer</span>
+          <div className="flex items-center">
+            <img src="/PNG%20Chainnova.png" alt="C" className="h-10 w-auto object-contain mr-1" />
+            <span className="text-3xl font-space-grotesk font-bold text-primary">hainnova</span>
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -151,7 +150,7 @@ function HomePage() {
                     <div className="flex items-center justify-between border-b border-primary/30 pb-3 mb-4">
                       <div className="flex items-center space-x-2">
                         <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-                        <span className="text-primary tracking-widest uppercase text-[10px] font-bold">DappServer // LIVE</span>
+                        <span className="text-primary tracking-widest uppercase text-[10px] font-bold">CHAINNOVA // LIVE</span>
                       </div>
                       <span className="text-primary/50 text-[10px]">NODE_ID: 0x7f3A…c9B2</span>
                     </div>

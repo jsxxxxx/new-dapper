@@ -92,7 +92,7 @@ function FutureReleaseSection() {
           <div className="bg-background border-2 border-primary p-8 max-w-4xl mx-auto">
             <div className="flex items-center justify-center space-x-4 mb-6">
               <Shield className="w-8 h-8 text-primary" />
-              <h3 className="text-2xl font-space-grotesk font-bold text-primary">The DappServer Guarantee</h3>
+              <h3 className="text-2xl font-space-grotesk font-bold text-primary">The Chainnova Guarantee</h3>
               <Lock className="w-8 h-8 text-primary" />
             </div>
             <p className="text-lg text-primary opacity-60 mb-6">
