@@ -60,14 +60,14 @@ function HowItWorksSection() {
                 key={index}
                 className="relative group flex flex-col items-center"
               >
-                <div className="p-10 bg-background border-2 border-primary shadow-[4px_4px_0_0_theme(colors.primary.DEFAULT)] hover:shadow-[12px_12px_0_0_theme(colors.primary.DEFAULT)] hover:-translate-y-2 hover:-translate-x-2 transition-all duration-300 h-full w-full max-w-sm cursor-pointer" onClick={() => navigate('/waitlist')}>
+                <div className="p-10 bg-background border-2 border-primary rounded-2xl shadow-[0_0_20px_rgba(168,85,247,0.1)] hover:shadow-[0_0_40px_rgba(168,85,247,0.3)] hover:-translate-y-2 transition-all duration-300 h-full w-full max-w-sm cursor-pointer" onClick={() => navigate('/waitlist')}>
                   {/* Step Number */}
-                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-primary flex items-center justify-center text-primary-foreground font-bold text-xl border-2 border-background shadow-[0_4px_10px_rgba(74,222,128,0.5)] z-10">
+                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-primary flex items-center justify-center text-primary-foreground font-bold text-xl border-2 border-background rounded-full shadow-[0_4px_15px_rgba(168,85,247,0.5)] z-10">
                     {index + 1}
                   </div>
                   
                   <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-8 mx-auto group-hover:bg-primary/20 transition-colors">
-                    <step.icon className="w-10 h-10 text-primary drop-shadow-[0_0_8px_rgba(74,222,128,0.8)]" />
+                    <step.icon className="w-10 h-10 text-primary drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]" />
                   </div>
                   
                   <h3 className="text-2xl font-space-grotesk font-bold mb-4 text-center text-primary">
@@ -88,7 +88,7 @@ function HowItWorksSection() {
                   </div>
                   
                   <div className="mt-8 pt-6 border-t border-primary/20 flex justify-center w-full relative z-10 transition-transform duration-300 group-hover:scale-105">
-                    <div className="inline-flex items-center px-4 py-2 font-medium bg-primary text-primary-foreground border-2 border-primary hover:bg-background hover:text-primary transition-colors">
+                    <div className="inline-flex items-center px-4 py-2 font-medium bg-primary text-primary-foreground border-2 border-primary rounded-xl hover:bg-background hover:text-primary transition-colors">
                       <Lock className="w-4 h-4 mr-2" />
                       Login
                     </div>

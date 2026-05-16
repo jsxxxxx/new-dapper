@@ -30,7 +30,7 @@ function HomePage() {
       <header className="fixed w-full bg-background z-50 py-4 px-6 border-b border-primary">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center">
-            <img src="/PNG%20Chainnova.png" alt="C" className="h-10 w-auto object-contain mr-1" />
+            <ChainnovaLogo className="h-10 w-10 text-primary mr-1" />
             <span className="text-3xl font-space-grotesk font-bold text-primary">hainnova</span>
           </div>
 
@@ -91,7 +91,7 @@ function HomePage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left Column - Text Content */}
               <div className="space-y-8">
-                <div className="inline-flex items-center px-4 py-2 border border-primary mb-6">
+                <div className="inline-flex items-center px-4 py-2 border border-primary mb-6 rounded-full">
                   <Star className="w-4 h-4 text-primary mr-2" />
                   <span className="text-sm text-primary">The Ultimate Dapp Companion</span>
                 </div>
@@ -141,7 +141,7 @@ function HomePage() {
                 <div className="relative mt-8 lg:mt-0">
                 <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full mix-blend-screen"></div>
                 
-                <div className="relative z-10 bg-background border-2 border-primary shadow-[8px_8px_0_0_theme(colors.primary.DEFAULT)] transition-transform duration-500 hover:-translate-y-2 hover:-translate-x-2 hover:shadow-[16px_16px_0_0_theme(colors.primary.DEFAULT)]">
+                <div className="relative z-10 bg-background border-2 border-primary rounded-2xl shadow-[0_0_30px_rgba(168,85,247,0.2)] transition-transform duration-500 hover:-translate-y-2 hover:shadow-[0_0_50px_rgba(168,85,247,0.4)]">
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50"></div>
 
                   {/* Animated Dashboard Panel */}
@@ -156,7 +156,7 @@ function HomePage() {
                     </div>
 
                     {/* Sparkline chart */}
-                    <div className="mb-4 border border-primary/20 p-3 bg-primary/5">
+                    <div className="mb-4 border border-primary/20 p-3 bg-primary/5 rounded-xl">
                       <div className="flex items-end justify-between h-14 gap-[3px]">
                         {[30,45,35,60,50,75,55,80,65,90,72,88,70,95,80,100].map((h, i) => (
                           <div
@@ -183,19 +183,19 @@ function HomePage() {
                         { sym: 'SOL', price: '148.92',    chg: '-0.61%', up: false },
                         { sym: 'ARB', price: '1.204',     chg: '+4.10%', up: true },
                       ].map(({ sym, price, chg, up }) => (
-                        <div key={sym} className="flex items-center justify-between border border-primary/20 px-3 py-2 hover:border-primary/60 transition-colors group">
+                        <div key={sym} className="flex items-center justify-between border border-primary/20 px-3 py-2 hover:border-primary/60 transition-colors group rounded-lg">
                           <div className="flex items-center space-x-2">
-                            <div className="w-5 h-5 border border-primary/40 flex items-center justify-center text-primary text-[8px] font-bold group-hover:bg-primary/10 transition-colors">{sym[0]}</div>
+                             <div className="w-5 h-5 border border-primary/40 flex items-center justify-center text-primary text-[8px] font-bold group-hover:bg-primary/10 transition-colors">{sym[0]}</div>
                             <span className="text-primary font-bold">{sym}</span>
                           </div>
                           <span className="text-primary/80">${price}</span>
-                          <span className={up ? 'text-primary font-bold' : 'text-red-400 font-bold'}>{chg}</span>
+                          <span className={up ? 'text-primary font-bold' : 'text-destructive font-bold'}>{chg}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* Console log strip */}
-                    <div className="border border-primary/20 bg-black/30 p-3 space-y-1">
+                    <div className="border border-primary/20 bg-black/30 p-3 space-y-1 rounded-xl">
                       <div className="text-primary/40 text-[9px] mb-1 tracking-wider">// PROTOCOL LOG</div>
                       {[
                         '> TX_CONFIRMED :: 0xab12…e4f9',
@@ -212,9 +212,9 @@ function HomePage() {
                   </div>
 
                   {/* Floating Security Badge */}
-                  <div className="absolute -top-6 -right-6 lg:-right-12 bg-background border-2 border-primary p-4 shadow-[4px_4px_0_0_theme(colors.primary.DEFAULT)] z-20 animate-pulse">
+                  <div className="absolute -top-6 -right-6 lg:-right-12 bg-background border-2 border-primary p-4 rounded-xl shadow-[0_0_20px_rgba(168,85,247,0.3)] z-20 animate-pulse">
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-primary/10 flex items-center justify-center border border-primary/30">
+                      <div className="w-10 h-10 bg-primary/10 flex items-center justify-center border border-primary/30 rounded-lg">
                         <Shield className="w-6 h-6 text-primary" />
                       </div>
                       <div>
@@ -225,7 +225,7 @@ function HomePage() {
                   </div>
                   
                   {/* Floating Stats Cards */}
-                  <div className="absolute -right-8 lg:-right-20 top-1/3 bg-background border-2 border-primary px-6 py-4 shadow-[4px_4px_0_0_theme(colors.primary.DEFAULT)] z-20 hover:-translate-y-1 transition-transform cursor-default">
+                  <div className="absolute -right-8 lg:-right-20 top-1/3 bg-background border-2 border-primary px-6 py-4 rounded-xl shadow-[0_0_20px_rgba(168,85,247,0.3)] z-20 hover:-translate-y-1 transition-transform cursor-default">
                     <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 rounded-full border border-primary flex items-center justify-center bg-primary/5">
                         <Bitcoin className="w-7 h-7 text-primary" />
@@ -237,7 +237,7 @@ function HomePage() {
                     </div>
                   </div>
                   
-                  <div className="absolute -left-8 lg:-left-20 bottom-1/4 bg-background border-2 border-primary px-6 py-4 shadow-[4px_4px_0_0_theme(colors.primary.DEFAULT)] z-20 hover:-translate-y-1 transition-transform cursor-default">
+                  <div className="absolute -left-8 lg:-left-20 bottom-1/4 bg-background border-2 border-primary px-6 py-4 rounded-xl shadow-[0_0_20px_rgba(168,85,247,0.3)] z-20 hover:-translate-y-1 transition-transform cursor-default">
                     <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 rounded-full border border-primary flex items-center justify-center bg-primary/5">
                         <Users className="w-7 h-7 text-primary" />
@@ -282,19 +282,19 @@ function HomePage() {
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-center space-x-3">
-                    <div className="w-6 h-6 border border-primary flex items-center justify-center">
+                    <div className="w-6 h-6 border border-primary flex items-center justify-center rounded-sm">
                       <ChevronRight className="w-4 h-4 text-primary" />
                     </div>
                     <span className="text-primary">Always-on cryptographic tunneling</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <div className="w-6 h-6 border border-primary flex items-center justify-center">
+                    <div className="w-6 h-6 border border-primary flex items-center justify-center rounded-sm">
                       <ChevronRight className="w-4 h-4 text-primary" />
                     </div>
                     <span className="text-primary">Instant trustless verification schemas</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <div className="w-6 h-6 border border-primary flex items-center justify-center">
+                    <div className="w-6 h-6 border border-primary flex items-center justify-center rounded-sm">
                       <ChevronRight className="w-4 h-4 text-primary" />
                     </div>
                     <span className="text-primary">Distributed multi-party computation</span>
@@ -312,7 +312,7 @@ function HomePage() {
                 <img 
                   src="https://images.pexels.com/photos/8369648/pexels-photo-8369648.jpeg?auto=compress&cs=tinysrgb&w=2000"
                   alt="Security Features"
-                  className="grayscale border border-primary"
+                  className="grayscale border border-primary rounded-2xl shadow-[0_0_30px_rgba(168,85,247,0.1)]"
                 />
               </div>
             </div>

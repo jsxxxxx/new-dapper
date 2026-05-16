@@ -136,12 +136,12 @@ function FeaturesSection() {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="group relative p-8 bg-background border-2 border-primary hover:-translate-y-2 hover:-translate-x-1 hover:shadow-[8px_8px_0_0_theme(colors.primary.DEFAULT)] transition-all duration-300 cursor-pointer overflow-hidden"
+              className="group relative p-8 bg-background border-2 border-primary rounded-2xl hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] transition-all duration-300 cursor-pointer overflow-hidden"
               onClick={() => navigate('/waitlist')}
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-primary/20 transition-all duration-500"></div>
               
-              <div className="w-14 h-14 bg-background border-2 border-primary shadow-[4px_4px_0_0_theme(colors.primary.DEFAULT)] flex items-center justify-center mb-8 relative z-10 transition-transform duration-300 group-hover:scale-110">
+              <div className="w-14 h-14 bg-background border-2 border-primary rounded-xl shadow-[0_0_15px_rgba(168,85,247,0.2)] flex items-center justify-center mb-8 relative z-10 transition-transform duration-300 group-hover:scale-110">
                 <feature.icon className="w-7 h-7 text-primary" />
               </div>
               <h3 className="text-xl font-space-grotesk font-bold mb-3 text-primary relative z-10">

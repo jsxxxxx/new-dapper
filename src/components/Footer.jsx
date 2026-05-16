@@ -1,5 +1,6 @@
 import React from 'react';
 import { Gem, Twitter, Github, MessageSquare, Shield, Lock } from 'lucide-react';
+import { ChainnovaLogo } from './ChainnovaLogo';
 
 function Footer() {
   return (
@@ -8,7 +9,7 @@ function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-6">
             <div className="flex items-center mt-2 mb-2">
-              <img src="/PNG%20Chainnova.png" alt="C" className="h-10 w-auto object-contain mr-1" />
+              <ChainnovaLogo className="h-10 w-10 text-primary mr-1" />
               <span className="text-3xl font-space-grotesk font-bold text-primary">hainnova</span>
             </div>
             <p className="text-primary opacity-60 leading-relaxed">
@@ -19,13 +20,13 @@ function Footer() {
               <span>Military-Grade Security</span>
             </div>
             <div className="flex space-x-4">
-              <a href="#" className="text-primary opacity-60 hover:opacity-100 transition-colors p-2 border border-transparent hover:border-primary">
+              <a href="#" className="text-primary opacity-60 hover:opacity-100 transition-colors p-2 border border-transparent hover:border-primary rounded-full">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-primary opacity-60 hover:opacity-100 transition-colors p-2 border border-transparent hover:border-primary">
+              <a href="#" className="text-primary opacity-60 hover:opacity-100 transition-colors p-2 border border-transparent hover:border-primary rounded-full">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="text-primary opacity-60 hover:opacity-100 transition-colors p-2 border border-transparent hover:border-primary">
+              <a href="#" className="text-primary opacity-60 hover:opacity-100 transition-colors p-2 border border-transparent hover:border-primary rounded-full">
                 <MessageSquare className="w-5 h-5" />
               </a>
             </div>

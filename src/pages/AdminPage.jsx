@@ -80,7 +80,7 @@ function AdminPage() {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <div className="w-16 h-16 border-4 border-gray-200 rounded-none animate-spin border-t-black mb-4 mx-auto"></div>
+          <div className="w-16 h-16 border-4 border-muted rounded-full animate-spin border-t-primary mb-4 mx-auto"></div>
           <p className="text-primary font-medium">Loading secure dashboard...</p>
         </div>
       </div>
@@ -103,7 +103,7 @@ function AdminPage() {
           </div>
           
           {error && (
-            <div className="border border-primary p-4 mb-6 bg-gray-100">
+            <div className="border border-primary p-4 mb-6 bg-muted">
               <p className="text-primary text-center font-medium">{error}</p>
             </div>
           )}
@@ -200,7 +200,7 @@ function AdminPage() {
               </thead>
               <tbody>
                 {filteredWaitlist.map((entry, index) => (
-                  <tr key={entry.id} className="border-b border-primary hover:bg-gray-100 transition-colors">
+                  <tr key={entry.id} className="border-b border-primary hover:bg-muted transition-colors">
                     <td className="px-6 py-4 text-primary font-medium">{entry.email}</td>
                     <td className="px-6 py-4 text-primary">{entry.wallet}</td>
                     <td className="px-6 py-4 text-primary font-mono text-sm opacity-60">
