@@ -60,14 +60,14 @@ function HowItWorksSection() {
                 key={index}
                 className="relative group flex flex-col items-center"
               >
-                <div className="p-10 bg-background border-2 border-primary rounded-2xl shadow-[0_0_20px_rgba(168,85,247,0.1)] hover:shadow-[0_0_40px_rgba(168,85,247,0.3)] hover:-translate-y-2 transition-all duration-300 h-full w-full max-w-sm cursor-pointer" onClick={() => navigate('/waitlist')}>
+                <div className="p-10 bg-background border-2 border-primary hover:border-accent rounded-2xl shadow-[0_0_20px_hsl(var(--primary)_/_0.1)] hover:shadow-[0_0_40px_hsl(var(--accent)_/_0.4)] hover:-translate-y-2 transition-all duration-300 h-full w-full max-w-sm cursor-pointer" onClick={() => navigate('/waitlist')}>
                   {/* Step Number */}
-                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-primary flex items-center justify-center text-primary-foreground font-bold text-xl border-2 border-background rounded-full shadow-[0_4px_15px_rgba(168,85,247,0.5)] z-10">
+                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xl border-2 border-background rounded-full shadow-[0_4px_15px_hsl(var(--secondary)_/_0.5)] z-10">
                     {index + 1}
                   </div>
                   
-                  <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-8 mx-auto group-hover:bg-primary/20 transition-colors">
-                    <step.icon className="w-10 h-10 text-primary drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]" />
+                  <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-8 mx-auto group-hover:bg-accent/20 transition-colors">
+                    <step.icon className="w-10 h-10 text-primary group-hover:text-accent drop-shadow-[0_0_8px_hsl(var(--primary)_/_0.5)] group-hover:drop-shadow-[0_0_15px_hsl(var(--accent)_/_0.8)] transition-all duration-300" />
                   </div>
                   
                   <h3 className="text-2xl font-space-grotesk font-bold mb-4 text-center text-primary">

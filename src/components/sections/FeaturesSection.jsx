@@ -136,13 +136,13 @@ function FeaturesSection() {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="group relative p-8 bg-background border-2 border-primary rounded-2xl hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] transition-all duration-300 cursor-pointer overflow-hidden"
+              className="group relative p-8 bg-background border-2 border-primary hover:border-secondary rounded-2xl hover:-translate-y-2 hover:shadow-[0_0_40px_hsl(var(--secondary)_/_0.4)] transition-all duration-300 cursor-pointer overflow-hidden"
               onClick={() => navigate('/waitlist')}
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-primary/20 transition-all duration-500"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-accent/30 transition-all duration-500"></div>
               
-              <div className="w-14 h-14 bg-background border-2 border-primary rounded-xl shadow-[0_0_15px_rgba(168,85,247,0.2)] flex items-center justify-center mb-8 relative z-10 transition-transform duration-300 group-hover:scale-110">
-                <feature.icon className="w-7 h-7 text-primary" />
+              <div className="w-14 h-14 bg-background border-2 border-primary group-hover:border-accent rounded-xl shadow-[0_0_15px_hsl(var(--primary)_/_0.2)] group-hover:shadow-[0_0_25px_hsl(var(--accent)_/_0.5)] flex items-center justify-center mb-8 relative z-10 transition-all duration-300 group-hover:scale-110">
+                <feature.icon className="w-7 h-7 text-primary group-hover:text-accent transition-colors duration-300" />
               </div>
               <h3 className="text-xl font-space-grotesk font-bold mb-3 text-primary relative z-10">
                 {feature.title}

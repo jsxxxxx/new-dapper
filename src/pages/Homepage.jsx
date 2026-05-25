@@ -96,8 +96,8 @@ function HomePage() {
                   <span className="text-sm text-primary">The Ultimate Dapp Companion</span>
                 </div>
                 
-                <h1 className="text-5xl lg:text-7xl font-space-grotesk font-bold leading-tight text-primary animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                  Master Your <span className="animate-text-glow">Web3 Journey</span>
+                <h1 className="text-5xl lg:text-7xl font-space-grotesk font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-fade-in-up pb-2" style={{ animationDelay: '0.2s' }}>
+                  Master Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-secondary to-primary animate-text-glow">Web3 Journey</span>
                 </h1>
                 
                 <p className="text-xl text-primary max-w-xl leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
@@ -139,10 +139,10 @@ function HomePage() {
               </div>
 
                 <div className="relative mt-8 lg:mt-0">
-                <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full mix-blend-screen"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 via-secondary/20 to-accent/30 blur-[100px] rounded-full mix-blend-screen"></div>
                 
-                <div className="relative z-10 bg-background border-2 border-primary rounded-2xl shadow-[0_0_30px_rgba(168,85,247,0.2)] transition-transform duration-500 hover:-translate-y-2 hover:shadow-[0_0_50px_rgba(168,85,247,0.4)]">
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50"></div>
+                <div className="relative z-10 bg-background border-2 border-secondary rounded-2xl shadow-[0_0_30px_hsl(var(--secondary)_/_0.3)] transition-transform duration-500 hover:-translate-y-2 hover:shadow-[0_0_50px_hsl(var(--accent)_/_0.5)]">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-accent opacity-80"></div>
 
                   {/* Animated Dashboard Panel */}
                   <div className="hero-dashboard p-5 font-mono text-xs select-none">
@@ -212,7 +212,7 @@ function HomePage() {
                   </div>
 
                   {/* Floating Security Badge */}
-                  <div className="absolute -top-6 -right-6 lg:-right-12 bg-background border-2 border-primary p-4 rounded-xl shadow-[0_0_20px_rgba(168,85,247,0.3)] z-20 animate-pulse">
+                  <div className="absolute -top-6 right-2 sm:-right-6 lg:-right-12 scale-75 sm:scale-100 origin-top-right bg-background border-2 border-accent p-4 rounded-xl shadow-[0_0_30px_hsl(var(--accent)_/_0.4)] z-20 animate-pulse">
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 bg-primary/10 flex items-center justify-center border border-primary/30 rounded-lg">
                         <Shield className="w-6 h-6 text-primary" />
@@ -225,7 +225,7 @@ function HomePage() {
                   </div>
                   
                   {/* Floating Stats Cards */}
-                  <div className="absolute -right-8 lg:-right-20 top-1/3 bg-background border-2 border-primary px-6 py-4 rounded-xl shadow-[0_0_20px_rgba(168,85,247,0.3)] z-20 hover:-translate-y-1 transition-transform cursor-default">
+                  <div className="absolute right-2 sm:-right-8 lg:-right-20 top-1/3 scale-75 sm:scale-100 origin-right bg-background border-2 border-destructive px-6 py-4 rounded-xl shadow-[0_0_30px_hsl(var(--destructive)_/_0.4)] z-20 hover:-translate-y-1 transition-transform cursor-default">
                     <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 rounded-full border border-primary flex items-center justify-center bg-primary/5">
                         <Bitcoin className="w-7 h-7 text-primary" />
@@ -237,7 +237,7 @@ function HomePage() {
                     </div>
                   </div>
                   
-                  <div className="absolute -left-8 lg:-left-20 bottom-1/4 bg-background border-2 border-primary px-6 py-4 rounded-xl shadow-[0_0_20px_rgba(168,85,247,0.3)] z-20 hover:-translate-y-1 transition-transform cursor-default">
+                  <div className="absolute left-2 sm:-left-8 lg:-left-20 bottom-1/4 scale-75 sm:scale-100 origin-left bg-background border-2 border-primary px-6 py-4 rounded-xl shadow-[0_0_30px_hsl(var(--primary)_/_0.4)] z-20 hover:-translate-y-1 transition-transform cursor-default">
                     <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 rounded-full border border-primary flex items-center justify-center bg-primary/5">
                         <Users className="w-7 h-7 text-primary" />
@@ -312,7 +312,7 @@ function HomePage() {
                 <img 
                   src="https://images.pexels.com/photos/8369648/pexels-photo-8369648.jpeg?auto=compress&cs=tinysrgb&w=2000"
                   alt="Security Features"
-                  className="grayscale border border-primary rounded-2xl shadow-[0_0_30px_rgba(168,85,247,0.1)]"
+                  className="grayscale border border-secondary rounded-2xl shadow-[0_0_40px_hsl(var(--secondary)_/_0.3)] hover:shadow-[0_0_60px_hsl(var(--accent)_/_0.4)] transition-shadow duration-500"
                 />
               </div>
             </div>
