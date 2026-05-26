@@ -5,7 +5,8 @@ import { useInView } from 'react-intersection-observer';
 function FutureReleaseSection() {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.1
+    threshold: 0,
+    rootMargin: '100px 0px',
   });
 
   const releases = [

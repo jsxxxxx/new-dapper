@@ -16,12 +16,14 @@ function HomePage() {
   
   const { ref: trustRef, inView: trustInView } = useInView({
     triggerOnce: true,
-    threshold: 0.1
+    threshold: 0,
+    rootMargin: '100px 0px',
   });
 
   const { ref: platformRef, inView: platformInView } = useInView({
     triggerOnce: true,
-    threshold: 0.1
+    threshold: 0,
+    rootMargin: '100px 0px',
   });
 
   return (

@@ -6,7 +6,8 @@ import { useNavigate } from 'react-router-dom';
 function FeaturesSection() {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.1
+    threshold: 0,
+    rootMargin: '100px 0px',
   });
 
   const navigate = useNavigate();
