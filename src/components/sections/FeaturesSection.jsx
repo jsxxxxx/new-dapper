@@ -1,15 +1,9 @@
 import React from 'react';
 import { Lock, Zap, Users, BarChart3, Shield, Wallet2, Gift, Coins, Cross, CircleDotDashed, Boxes, ArrowDownNarrowWide, BookCheck, Crosshair, Check, CircleOff, ArrowDownUp, ArrowLeftRight } from 'lucide-react';
-import { useInView } from 'react-intersection-observer';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 function FeaturesSection() {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0,
-    rootMargin: '100px 0px',
-  });
-
   const navigate = useNavigate();
 
   const features = [
@@ -115,32 +109,52 @@ function FeaturesSection() {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section 
-      ref={ref}
-      className={`py-24 bg-background transition-all duration-1000 ${
-        inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
+    <motion.section 
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-50px" }}
+      className="py-24 bg-background"
       id="features"
     >
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <motion.div variants={itemVariants} className="text-center mb-16">
           <h2 className="text-4xl font-space-grotesk font-bold mb-6 text-primary">
             The <span className="underline">Chainnova</span> Advantage
           </h2>
           <p className="text-xl text-primary opacity-60 max-w-3xl mx-auto">
             A comprehensive suite of fortified tools designed to keep your portfolio entirely in your control.
           </p>
-        </div>
+        </motion.div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div variants={containerVariants} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <div 
+            <motion.div 
+              variants={itemVariants}
               key={index}
-              className="group relative p-8 bg-background border-2 border-primary hover:border-secondary rounded-2xl hover:-translate-y-2 hover:shadow-[0_0_40px_hsl(var(--secondary)_/_0.4)] transition-all duration-300 cursor-pointer overflow-hidden"
+              className="group relative p-8 bg-background border border-primary/40 hover:border-accent rounded-2xl hover:-translate-y-2 hover:shadow-[0_0_40px_hsl(var(--accent)_/_0.3)] transition-all duration-300 cursor-pointer overflow-hidden"
               onClick={() => navigate('/waitlist')}
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-accent/30 transition-all duration-500"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-accent/20 transition-all duration-500"></div>
               
               <div className="w-14 h-14 bg-background border-2 border-primary group-hover:border-accent rounded-xl shadow-[0_0_15px_hsl(var(--primary)_/_0.2)] group-hover:shadow-[0_0_25px_hsl(var(--accent)_/_0.5)] flex items-center justify-center mb-8 relative z-10 transition-all duration-300 group-hover:scale-110">
                 <feature.icon className="w-7 h-7 text-primary group-hover:text-accent transition-colors duration-300" />
@@ -157,11 +171,11 @@ function FeaturesSection() {
                   Explore
                 </span>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

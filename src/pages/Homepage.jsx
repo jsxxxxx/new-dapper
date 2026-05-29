@@ -8,7 +8,8 @@ import FeaturesSection from '../components/sections/FeaturesSection';
 import FutureReleaseSection from '../components/sections/FutureReleaseSection';
 import HowItWorksSection from '../components/sections/HowItWorksSection';
 import CryptoHubLogo from '../assets/CryptoHub.svg';
-import { ChainnovaLogo } from '../components/ChainnovaLogo';
+import { motion } from 'framer-motion';
+
 
 function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,8 +33,8 @@ function HomePage() {
       <header className="fixed w-full bg-background z-50 py-4 px-6 border-b border-primary">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center">
-            <ChainnovaLogo className="h-10 w-10 text-primary mr-1" />
-            <span className="text-3xl font-space-grotesk font-bold text-primary">hainnova</span>
+            <img src="/PNG Chainnova.png" alt="Chainnova Logo" className="h-10 w-auto mr-3" />
+            <span className="text-3xl font-space-grotesk font-bold text-primary tracking-tight">Chainnova</span>
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -92,21 +93,46 @@ function HomePage() {
           <div className="relative max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left Column - Text Content */}
-              <div className="space-y-8">
-                <div className="inline-flex items-center px-4 py-2 border border-primary mb-6 rounded-full">
+              <motion.div 
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="space-y-8"
+              >
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
+                  className="inline-flex items-center px-4 py-2 border border-primary mb-6 rounded-full"
+                >
                   <Star className="w-4 h-4 text-primary mr-2" />
                   <span className="text-sm text-primary">The Ultimate Dapp Companion</span>
-                </div>
+                </motion.div>
                 
-                <h1 className="text-5xl lg:text-7xl font-space-grotesk font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-fade-in-up pb-2" style={{ animationDelay: '0.2s' }}>
+                <motion.h1 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.6 }}
+                  className="text-5xl lg:text-7xl font-space-grotesk font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent pb-2"
+                >
                   Master Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-secondary to-primary animate-text-glow">Web3 Journey</span>
-                </h1>
+                </motion.h1>
                 
-                <p className="text-xl text-primary max-w-xl leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+                <motion.p 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4, duration: 0.6 }}
+                  className="text-xl text-primary max-w-xl leading-relaxed"
+                >
                   Navigate the decentralized ecosystem with unparalleled confidence. Our protocol ensures lightning-quick execution shielded by impenetrable cryptographic layers, tailored for maximum user peace of mind.
-                </p>
+                </motion.p>
                 
-                <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5, duration: 0.6 }}
+                  className="flex flex-col sm:flex-row gap-4"
+                >
                   <button 
                     onClick={() => navigate('/waitlist')}
                     className="btn btn-filled text-lg group relative"
@@ -122,9 +148,14 @@ function HomePage() {
                   <a href="#features" className="btn btn-outline text-lg">
                     Explore Features
                   </a>
-                </div>
+                </motion.div>
                 
-                <div className="grid grid-cols-3 gap-8 pt-8 border-t border-primary">
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.7, duration: 1 }}
+                  className="grid grid-cols-3 gap-8 pt-8 border-t border-primary"
+                >
                   <div className="text-center">
                     <p className="text-3xl font-space-grotesk text-primary font-bold">$5B+</p>
                     <p className="text-primary opacity-60">Secured Volume</p>
@@ -137,13 +168,22 @@ function HomePage() {
                     <p className="text-3xl font-space-grotesk text-primary font-bold">99.9%</p>
                     <p className="text-primary opacity-60">Uptime</p>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
-                <div className="relative mt-8 lg:mt-0">
+              <motion.div 
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="relative mt-8 lg:mt-0"
+              >
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 via-secondary/20 to-accent/30 blur-[100px] rounded-full mix-blend-screen"></div>
                 
-                <div className="relative z-10 bg-background border-2 border-secondary rounded-2xl shadow-[0_0_30px_hsl(var(--secondary)_/_0.3)] transition-transform duration-500 hover:-translate-y-2 hover:shadow-[0_0_50px_hsl(var(--accent)_/_0.5)]">
+                <motion.div 
+                  animate={{ y: [0, -15, 0] }}
+                  transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                  className="relative z-10 bg-background border-2 border-secondary rounded-2xl shadow-[0_0_30px_hsl(var(--secondary)_/_0.3)] transition-transform duration-500 hover:shadow-[0_0_50px_hsl(var(--accent)_/_0.5)]"
+                >
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-accent opacity-80"></div>
 
                   {/* Animated Dashboard Panel */}
@@ -250,8 +290,8 @@ function HomePage() {
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
         </section>

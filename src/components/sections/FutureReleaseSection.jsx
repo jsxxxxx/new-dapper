@@ -1,6 +1,7 @@
 import React from 'react';
 import { Rocket, Lock, Zap, Globe2, Shield, Key, Fingerprint, Eye } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 
 function FutureReleaseSection() {
   const { ref, inView } = useInView({
@@ -36,27 +37,46 @@ function FutureReleaseSection() {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section 
-      ref={ref}
-      className={`py-24 bg-background border-t border-primary transition-all duration-1000 ${
-        inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
+    <motion.section 
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-50px" }}
+      className="py-24 bg-background border-t border-primary"
       id="future-releases"
     >
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <motion.div variants={itemVariants} className="text-center mb-16">
           <h2 className="text-4xl font-space-grotesk font-bold mb-6 text-primary">
             Tomorrow's <span className="underline">Roadmap</span>
           </h2>
           <p className="text-xl text-primary opacity-60 max-w-2xl mx-auto">
             Pioneering the next wave of decentralized privacy and execution speed
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <motion.div variants={containerVariants} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {releases.map((release, index) => (
-            <div key={index} className="relative group">
+            <motion.div variants={itemVariants} key={index} className="relative group">
               <div className="relative p-8 bg-background border-2 border-primary/50 rounded-2xl group-hover:border-primary group-hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] transition-all duration-500 h-full overflow-hidden flex flex-col">
                 <div className="absolute top-0 right-0 p-4 text-8xl font-black text-primary/5 select-none pointer-events-none transform translate-x-4 -translate-y-4 group-hover:text-primary/10 transition-colors">
                   0{index + 1}
@@ -84,12 +104,12 @@ function FutureReleaseSection() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Security Promise */}
-        <div className="mt-16 text-center">
+        <motion.div variants={itemVariants} className="mt-16 text-center">
           <div className="bg-background border-2 border-primary rounded-2xl p-8 max-w-4xl mx-auto shadow-[0_0_40px_rgba(168,85,247,0.1)]">
             <div className="flex items-center justify-center space-x-4 mb-6">
               <Shield className="w-8 h-8 text-primary" />
@@ -115,9 +135,9 @@ function FutureReleaseSection() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
