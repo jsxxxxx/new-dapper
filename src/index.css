@@ -6,25 +6,25 @@
 
 @layer base {
   :root {
-    --background: 220 50% 6%; /* Deep Midnight Blue */
+    --background: 260 50% 5%; /* Deep Cyberpunk Purple/Black */
     --foreground: 0 0% 100%;
-    --card: 220 50% 8%;
+    --card: 260 50% 8%;
     --card-foreground: 0 0% 100%;
-    --popover: 220 50% 8%;
+    --popover: 260 50% 8%;
     --popover-foreground: 0 0% 100%;
-    --primary: 155 100% 50%; /* Electric Lime */
-    --primary-foreground: 220 50% 6%; /* Dark text for primary */
-    --secondary: 190 100% 50%; /* Deep Cyan */
+    --primary: 325 100% 55%; /* Neon Pink */
+    --primary-foreground: 0 0% 100%; /* White text */
+    --secondary: 280 100% 65%; /* Neon Purple */
     --secondary-foreground: 0 0% 100%;
-    --muted: 220 30% 15%;
-    --muted-foreground: 220 20% 75%;
-    --accent: 170 100% 55%; /* Vibrant Teal */
-    --accent-foreground: 220 50% 6%;
+    --muted: 260 30% 15%;
+    --muted-foreground: 260 20% 75%;
+    --accent: 190 100% 55%; /* Neon Cyan */
+    --accent-foreground: 260 50% 5%;
     --destructive: 350 100% 60%; /* Red/Orange alert */
     --destructive-foreground: 0 0% 100%;
-    --border: 220 50% 20%;
-    --input: 220 50% 20%;
-    --ring: 155 100% 50%;
+    --border: 260 50% 20%;
+    --input: 260 50% 20%;
+    --ring: 325 100% 55%;
     --radius: 1rem;
   }
 }
@@ -51,15 +51,15 @@
 
 @layer components {
   .btn {
-    @apply px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center space-x-2 border border-primary;
+    @apply px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center space-x-2 border border-primary hover:-translate-y-1;
   }
 
   .btn-outline {
-    @apply border-secondary text-secondary hover:bg-gradient-to-r hover:from-primary hover:via-secondary hover:to-accent hover:text-primary-foreground hover:border-transparent;
+    @apply border-secondary text-secondary hover:bg-gradient-to-r hover:from-primary hover:via-secondary hover:to-accent hover:text-primary-foreground hover:border-transparent hover:shadow-[0_0_20px_hsl(var(--primary)_/_0.4)] hover:scale-105;
   }
 
   .btn-filled {
-    @apply bg-gradient-to-r from-primary via-secondary to-accent text-primary-foreground shadow-[0_0_20px_hsl(var(--secondary)_/_0.3)] hover:shadow-[0_0_40px_hsl(var(--primary)_/_0.5)] hover:scale-105;
+    @apply bg-gradient-to-r from-primary via-secondary to-accent text-primary-foreground shadow-[0_0_20px_hsl(var(--secondary)_/_0.3)] hover:shadow-[0_0_40px_hsl(var(--primary)_/_0.6)] hover:scale-110;
   }
 
   .gradient-text {
@@ -67,19 +67,19 @@
   }
 
   .neon-glow {
-    @apply shadow-[0_0_20px_hsl(var(--primary)_/_0.3)];
+    @apply shadow-[0_0_20px_hsl(var(--primary)_/_0.3)] hover:shadow-[0_0_40px_hsl(var(--primary)_/_0.6)] transition-shadow duration-300;
   }
 
   .neon-border {
-    @apply border border-primary hover:border-secondary transition-colors;
+    @apply border border-primary hover:border-secondary hover:shadow-[0_0_20px_hsl(var(--secondary)_/_0.4)] transition-all duration-300;
   }
 
   .glass-effect {
-    @apply bg-background/80 backdrop-blur-md border border-border;
+    @apply bg-background/80 backdrop-blur-md border border-border hover:border-primary/50 transition-colors duration-300;
   }
 
   .encryption-badge {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary border border-primary/30;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary border border-primary/30 group-hover:bg-primary/20 group-hover:border-primary/50 transition-colors duration-300;
   }
 }
 
